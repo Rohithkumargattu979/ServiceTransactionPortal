@@ -3,6 +3,7 @@ import "./Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
 
+
 function check_pass() {
     if (document.getElementById('password').value ==
         document.getElementById('confirm_password').value) {
