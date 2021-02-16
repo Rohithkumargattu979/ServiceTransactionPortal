@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\backend",
     "\\service-portal",
+    "\\service-portal\\public",
     "\\service-portal\\src"
   ],
-  "SelectedNode": "\\service-portal\\src\\App.js",
+  "SelectedNode": "\\service-portal\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }
