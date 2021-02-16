@@ -1,5 +1,6 @@
 import './App.css';
-import RegPage from './Registrationpage'
+import RegPageseeker from './Registrationpageseeker.js'
+import RegPagegiver from './Registrationpagegiver.js'
 import Loginpage from './Login'
 import Error from './Errorpage'
 
@@ -18,7 +19,8 @@ function App() {
               
               {<Switch>
                   <Route exact path='/' component={Loginpage} />
-                  <Route exact path='/regpage' component={RegPage} />                  
+                  <Route exact path='/regpageseeker' component={RegPageseeker} /> 
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />    
                   <Route component={Error} />
               </Switch>}
               

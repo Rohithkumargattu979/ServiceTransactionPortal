@@ -1,5 +1,6 @@
 import React from "react";
-import "./Registrationpage.css"
+import "./Registrationpageseeker.css"
+import { Route } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
 
 function check_pass() {
@@ -14,6 +15,14 @@ function check_pass() {
         document.getElementById('message').innerHTML = 'not matching';
     }
     
+}
+
+function submit_sucess() {
+    if (document.getElementById('message').innerHTML == 'matching') {
+        window.location.assign('/login');
+    } else {
+        window.location.assign('/regpagegiver');
+    }
 }
 
 const RegPage = () => {
@@ -78,11 +87,18 @@ const RegPage = () => {
                             Experience
                         </label>
                         <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" />
+                        <Route render={({ history }) => (
+                            <button onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
+                                sign-up
+                            </button>
+                        )} />
+
                         <div className="text-center mt-4">
-                            <MDBBtn color="warning" outline type="submit">
-                                Sign up
-                    <MDBIcon far icon="paper-plane" className="ml-2" />
-                            </MDBBtn>
+                           
+                        <MDBBtn color="warning" outline type="submit" >
+                                 Sign up
+                         </MDBBtn> >
+                            
                         </div>
                     </form>
                 </MDBCol>

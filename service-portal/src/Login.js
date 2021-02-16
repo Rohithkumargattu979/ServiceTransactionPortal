@@ -1,25 +1,21 @@
-import React, { Component } from 'react'
-import { Route, Switch, Redirect, Link } from 'react-router-dom'
-import { BrowserHistory } from 'react-dom'
-import Regpage from './Registrationpage'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-function regbutton() {
-    console.log("clicked");    
 
-    <Redirect to='/regpage' />
-    
-}
 
-const Loginpage = () => {
 
-    
+const Loginpage = () => {    
 
     return (
         <div>
             < h1 > Login page</h1 >
             
             <button>
-                <Link to='/regpage'>regpage</Link> 
+                <Link to='/regpageseeker'>regpageseeker</Link> 
+                 
+            </button>
+            <button>
+                <Link to='/regpagegiver'>regpagegiver</Link> 
                  
             </button>
             
