@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Route} from 'react-router-dom'
 
 
 
@@ -10,14 +10,17 @@ const Loginpage = () => {
         <div>
             < h1 > Login page</h1 >
             
-            <button>
-                <Link to='/regpageseeker'>regpageseeker</Link> 
-                 
-            </button>
-            <button>
-                <Link to='/regpagegiver'>regpagegiver</Link> 
-                 
-            </button>
+            
+            <Route render={({ history }) => (
+                <button onClick={() => { history.push('/regpageseeker') }}>
+                    seeker
+                </button>
+            )} />
+            <Route render={({ history }) => (
+                <button onClick={() => { history.push('/regpagegiver') }}>
+                    giver
+                </button>
+            )} />
             
         </div>
 

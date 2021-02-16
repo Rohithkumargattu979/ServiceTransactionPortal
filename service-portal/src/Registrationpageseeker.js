@@ -87,19 +87,15 @@ const RegPage = () => {
                             Experience
                         </label>
                         <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="3" />
+                        <br />
                         <Route render={({ history }) => (
                             <button onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
                                 sign-up
                             </button>
-                        )} />
-
-                        <div className="text-center mt-4">
-                           
-                        <MDBBtn color="warning" outline type="submit" >
-                                 Sign up
-                         </MDBBtn> >
+                        )} />     
+                                               
                             
-                        </div>
+                        
                     </form>
                 </MDBCol>
             </MDBRow>
