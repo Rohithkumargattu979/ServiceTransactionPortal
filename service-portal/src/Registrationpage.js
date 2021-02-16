@@ -24,12 +24,12 @@ const RegPage = () => {
                     <form>
                         <p className="h4 text-center mb-4">Write to us</p>
                         <label htmlFor="defaultFormContactNameEx" className="grey-text">
-                            Your name
+                            Your name :
                         </label>
                         <input type="text" id="defaultFormContactNameEx" className="form-control" />
                         <br />
                         <label htmlFor="defaultFormContactEmailEx" className="grey-text">
-                            Your email
+                            Your email :
                         </label>
                         <input type="email" id="defaultFormContactEmailEx" className="form-control" />
                         <br />

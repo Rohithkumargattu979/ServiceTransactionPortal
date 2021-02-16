@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\service-portal",
-    "\\service-portal\\public",
-    "\\service-portal\\src"
+    "\\service-portal"
   ],
-  "SelectedNode": "\\service-portal\\public\\index.html",
+  "SelectedNode": "\\service-portal",
   "PreviewInSolutionExplorer": false
 }
