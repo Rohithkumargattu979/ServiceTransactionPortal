@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\service-portal"
+    "\\service-portal",
+    "\\service-portal\\src"
   ],
-  "SelectedNode": "\\service-portal",
+  "SelectedNode": "\\service-portal\\src\\Registrationpageseeker.js",
   "PreviewInSolutionExplorer": false
 }
