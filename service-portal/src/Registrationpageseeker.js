@@ -28,17 +28,15 @@ function submit_sucess() {
 
 const RegPage = () => {
     return (
-    <div className='background'>
+    <header className='background'>
         
             <form className='container'>
-                <p className="h4 text-center mb-4">Registration</p>
+                <p className="grey-text">Registration</p>
                 <label htmlFor="defaultFormContactNameEx" className="grey-text">
                     Your name :
                 </label>
                 <input type="text" id="defaultFormContactNameEx" className="form-control" placeholder='full name'/>
                 <br />
-
-
                 <label htmlFor="defaultFormContactEmailEx" className="grey-text">
                     Your email :
                 </label>
@@ -56,8 +54,9 @@ const RegPage = () => {
                     gender :
                 </label>
                 &nbsp;&nbsp;
-                <select name="gender" id="gender" className="form-control">
-                    <option value="male">male</option>
+                <select name="gender" id="gender" className="dropdown" placeholder='gender'>
+                    
+                    <option value="male" placeholder='gender'>male</option>
                     <option value="female">female</option>
                     <option value="other">other</option>
                     
@@ -67,7 +66,7 @@ const RegPage = () => {
 
 
                 <label for="occupation" className='grey-text'>occupation :</label>
-                <select name="occcupation" id="occupation" className="form-control">
+                <select name="occcupation" id="occupation" className="dropdown">
                     <option value="carpenter">carpenter</option>
                     <option value="tutor">tutor</option>
                     <option value="other">other</option>
@@ -80,10 +79,10 @@ const RegPage = () => {
                     password :
                         
                 </label>
-                <input type="password" name="password" id="password" onChange={check_pass} className="form-control" />
+                <input type="password" name="password" id="password" onChange={check_pass} className="form-control" placeholder='password'/>
                 <br />
                 <label htmlFor="defaultExperience" className="grey-text">
-                    conform password :
+                    conform pass :
                         
                 </label>
                 <input type="password" name="confirm_password" id="confirm_password" onChange={check_pass} className="form-control" placeholder='same as password'/>
@@ -105,7 +104,7 @@ const RegPage = () => {
                 )} />   
             </form>
         
-    </div>
+    </header>
                 
     );
 };
