@@ -1,8 +1,8 @@
 import './App.css';
-import RegPageseeker from './Registrationpageseeker.js'
-import RegPagegiver from './Registrationpagegiver.js'
-import Loginpage from './Login'
-import Error from './Errorpage'
+import RegPageseeker from './Registrationpageseeker.js';
+import RegPagegiver from './Registrationpagegiver.js';
+import Loginpage from './Login';
+import Error from './Errorpage';
 
 import {
     BrowserRouter as Router,
