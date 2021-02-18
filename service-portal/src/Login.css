@@ -1,17 +1,33 @@
-.btn1{
-    margin : 5px;    
+.container-login{
+    width: 20%;
+    background-color: rgba(5, 4, 4, 0.411);
     border: 0;
-    padding: 5px;
     border-radius: 10px;
-    background: rgba(0, 45, 128, 0.178);
-    font-size: 20px;
+    padding: 50px;
 }
 
-.btn2{
-    margin : 5px;    
+.text{
+    color: black;
+    font-size: calc(20px + 2vmin);
+}
+
+.text-account{
+    color: black;
+    font-size: 15px;
+}
+
+.box{
     border: 0;
-    padding: 5px;
     border-radius: 10px;
-    background: rgba(0, 81, 128, 0.178);
-    font-size: 20px;
+    padding: 10px;
+}
+
+.signin{
+    border: 0;
+    border-radius: 10px;
+    font-size: 30px;
+    background: rgb(62, 62, 190);
+}
+.signin:hover{
+    background-color: rgb(6, 10, 226);
 }
