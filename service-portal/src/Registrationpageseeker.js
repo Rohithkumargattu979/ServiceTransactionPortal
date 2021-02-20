@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
+import axios from 'axios'
 
+var fullName;
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -18,43 +19,127 @@ function check_pass() {
     
 }
 
-function submit_sucess() {
-    if (document.getElementById('message').innerHTML == 'matching') {
-        window.location.assign('/login');
-    } else {
-        window.location.assign('/regpagegiver');
-    }
-}
 
-const RegPage = () => {
+class RegPage extends Component {
+    constructor(){
+        super()
+        this.state={
+            fullName:'a',
+            email:'a@b.c',
+            phoneNo:'7789989878',
+            gender:'a',
+            occupation:'a',
+            password:'a',
+            experience:'a'
+        }
+        this.changeFullName = this.changeFullName.bind(this)
+        this.changeEmail = this.changeEmail.bind(this)
+        this.changeGender = this.changeGender.bind(this)
+        this.changeOccupation = this.changeOccupation.bind(this)
+        this.changePassword = this.changePassword.bind(this)
+        this.changePhoneNo = this.changePhoneNo.bind(this)
+        this.changeExperience = this.changeExperience.bind(this)
+        this.onSubmit=this.onSubmit.bind(this)
+    }
+
+    
+        changeFullName(props){
+            
+            this.setState({
+                fullName:props.target.value
+            })
+            
+        }
+        changeEmail(Event){
+            this.setState({
+                email:Event.target.value
+            })
+        }
+        changeGender(Event){
+            this.setState({
+                gender:Event.target.value
+            })
+        }
+        changeOccupation(Event){
+            this.setState({
+                occupation:Event.target.value
+            })
+        }
+        changePassword(Event){
+            this.setState({
+                password:Event.target.value
+            })
+        }
+        changePhoneNo(Event){
+            this.setState({
+                phoneNo:Event.target.value
+            })
+        }
+        changeExperience(Event){
+            this.setState({
+                experience:Event.target.value
+            })
+        }
+
+        onSubmit(Event){
+            
+            if (document.getElementById('message').innerHTML == 'matching') {
+            Event.preventDefault()
+
+            const registered = {
+                fullName: this.Event.fullName,
+                email:this.Event.email,
+                phoneNo:this.Event.email,
+                gender:this.Event.gender,
+                occupation:this.Event.occupation,
+                password:this.Event.password,
+                experience:this.Event.experience
+            }
+
+            axios.post('http://localhost:4000/app/signup',registered)
+            .then(Response => console.log(Response.data))
+
+            this.setState({
+                fullName:'',
+                email:'',
+                phoneNo:'',
+                gender:'',
+                occupation:'',
+                password:'',
+                experience:''
+            })
+        }}
+    
+
+    render(){
     return (
     <header className='background'>
         
-            <form className='container'>
+            <form className='container' onSubmit={this.onSubmit}>
                 <p className="grey-text">Registration</p>
-                <label htmlFor="defaultFormContactNameEx" className="grey-text">
+                <label htmlFor="defaultFormContactNameEx" className="grey-text" >
                     Your name :
                 </label>
-                <input type="text" id="defaultFormContactNameEx" className="form-control" placeholder='full name'/>
+                <input type="text" id="defaultFormContactNameEx" className="form-control" placeholder='full name' onChange={this.changeFullName} value={this.state.fullName} />
                 <br />
                 <label htmlFor="defaultFormContactEmailEx" className="grey-text">
                     Your email :
                 </label>
-                <input type="email" id="defaultFormContactEmailEx" className="form-control" placeholder='(eg: rahul@gmail.com)'/>
+                <input type="email" id="defaultFormContactEmailEx" className="form-control" placeholder='(eg: rahul@gmail.com)' onChange={this.changeEmail} value={this.state.email}/>
                 <br />
 
 
                 <label htmlFor="phone no" className='grey-text'> 
                     phone no :
                 </label>                        
-                <input type="tel"  pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' />
+                <input type="tel"  pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' onChange={this.changePhoneNo} value={this.state.phoneNo}/>
                 <br />
 
                 <label htmlFor="gender" className='grey-text'>
                     gender :
                 </label>
                 &nbsp;&nbsp;
-                <select name="gender" id="gender" className="dropdown" placeholder='gender'>
+                <select name="gender" id="gender" className="dropdown" placeholder='gender' onChange={this.changeGender} value={this.state.gender}>
                     
                     <option value="male" placeholder='gender'>male</option>
                     <option value="female">female</option>
@@ -66,7 +151,7 @@ const RegPage = () => {
 
 
                 <label for="occupation" className='grey-text'>occupation :</label>
-                <select name="occcupation" id="occupation" className="dropdown">
+                <select name="occupation" id="occupation" className="dropdown" onChange={this.changeOccupation} value={this.state.occupation}>
                     <option value="carpenter">carpenter</option>
                     <option value="tutor">tutor</option>
                     <option value="other">other</option>
@@ -79,7 +164,7 @@ const RegPage = () => {
                     password :
                         
                 </label>
-                <input type="password" name="password" id="password" onChange={check_pass} className="form-control" placeholder='password'/>
+                <input type="password" name="password" id="password" onChange={check_pass} className="form-control" placeholder='password' onChange={this.changePassword} value={this.state.password}/>
                 <br />
                 <label htmlFor="defaultExperience" className="grey-text">
                     conform pass :
@@ -95,10 +180,10 @@ const RegPage = () => {
                     Experience :
                 </label>
                 
-                <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="2" placeholder='brief bio' />
+                <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="2" placeholder='brief bio' onChange={this.changeExperience} value={this.state.experience} />
                 <br />
                 <Route render={({ history }) => (
-                    <button className='signup' onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
+                    <button value = 'Submit' className='signup' value='Submit'>
                         sign-up
                     </button>
                 )} />   
@@ -108,5 +193,6 @@ const RegPage = () => {
                 
     );
 };
+}
 
 export default RegPage;
