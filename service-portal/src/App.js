@@ -1,9 +1,11 @@
 import './App.css';
+
 import RegPageseeker from './Registrationpageseeker.js'
 import RegPagegiver from './Registrationpagegiver.js'
 import Loginpageopt from './Loginoption'
 import Error from './Errorpage'
 import Login from './Login.js'
+
 
 import {
     BrowserRouter as Router,
