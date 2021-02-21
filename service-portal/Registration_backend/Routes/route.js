@@ -1,16 +1,23 @@
 const { Router, request, response } = require('express')
 const express = require('express')
 const router = express.Router()
-const SignupTemplatecopy = require('../models/Signup_model')
+const signupTemplatecopy = require('../models/Signup_model')
+const bcrypt = require('bcrypt')
 
-router.post('/signup',(request,response) => {
-    const signedupUser = new SignupTemplatecopy({
+
+
+router.post('/signup',async (request,response) => {
+
+    const saltPassword = await bcrypt.genSalt(10)
+    const securedPassword = await bcrypt.hash(request.body.password,saltPassword)
+
+    const signedupUser = new signupTemplatecopy({
         fullName:request.body.fullName,
         email:request.body.email,
         phoneNo:request.body.phoneNo,
         gender:request.body.gender,
         occupation:request.body.occupation,
-        password:request.body.password,
+        password:securedPassword,
         experience:request.body.experience,
     })
     signedupUser.save()
@@ -21,3 +28,5 @@ router.post('/signup',(request,response) => {
         response.json(error)
     })
 })
+
+module.exports = router

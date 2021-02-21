@@ -87,13 +87,13 @@ class RegPage extends Component {
             Event.preventDefault()
 
             const registered = {
-                fullName: this.Event.fullName,
-                email:this.Event.email,
-                phoneNo:this.Event.email,
-                gender:this.Event.gender,
-                occupation:this.Event.occupation,
-                password:this.Event.password,
-                experience:this.Event.experience
+                fullName: document.getElementById('fullName').value,
+                email:document.getElementById('email').value,
+                phoneNo:document.getElementById('phoneNo').value,
+                gender:document.getElementById('gender').value,
+                occupation:document.getElementById('occupation').value,
+                password:document.getElementById('password').value,
+                experience:document.getElementById('experience').value
             }
 
             axios.post('http://localhost:4000/app/signup',registered)
@@ -115,24 +115,24 @@ class RegPage extends Component {
     return (
     <header className='background'>
         
-            <form className='container' onSubmit={this.onSubmit}>
+            <form className='container' >
                 <p className="grey-text">Registration</p>
                 <label htmlFor="defaultFormContactNameEx" className="grey-text" >
                     Your name :
                 </label>
-                <input type="text" id="defaultFormContactNameEx" className="form-control" placeholder='full name' onChange={this.changeFullName} value={this.state.fullName} />
+                <input type="text" id="fullName" className="form-control" placeholder='full name' onChange={this.changeFullName} value={this.state.fullName} />
                 <br />
                 <label htmlFor="defaultFormContactEmailEx" className="grey-text">
                     Your email :
                 </label>
-                <input type="email" id="defaultFormContactEmailEx" className="form-control" placeholder='(eg: rahul@gmail.com)' onChange={this.changeEmail} value={this.state.email}/>
+                <input type="email" id="email" className="form-control" placeholder='(eg: rahul@gmail.com)' onChange={this.changeEmail} value={this.state.email}/>
                 <br />
 
 
                 <label htmlFor="phone no" className='grey-text'> 
                     phone no :
                 </label>                        
-                <input type="tel"  pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' onChange={this.changePhoneNo} value={this.state.phoneNo}/>
+                <input type="tel" id = 'phoneNo' pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' onChange={this.changePhoneNo} value={this.state.phoneNo}/>
                 <br />
 
                 <label htmlFor="gender" className='grey-text'>
@@ -164,7 +164,7 @@ class RegPage extends Component {
                     password :
                         
                 </label>
-                <input type="password" name="password" id="password" onChange={check_pass} className="form-control" placeholder='password' onChange={this.changePassword} value={this.state.password}/>
+                <input type="password" name="password" id="password" className="form-control" placeholder='password' onChange={this.changePassword} value={this.state.password}/>
                 <br />
                 <label htmlFor="defaultExperience" className="grey-text">
                     conform pass :
@@ -180,10 +180,10 @@ class RegPage extends Component {
                     Experience :
                 </label>
                 
-                <textarea type="text" id="defaultFormContactMessageEx" className="form-control" rows="2" placeholder='brief bio' onChange={this.changeExperience} value={this.state.experience} />
+                <textarea type="text" id="experience" className="form-control" rows="2" placeholder='brief bio' onChange={this.changeExperience} value={this.state.experience} />
                 <br />
                 <Route render={({ history }) => (
-                    <button value = 'Submit' className='signup' value='Submit'>
+                    <button value = 'Submit' className='signup' value='Submit' onClick={this.onSubmit}>
                         sign-up
                     </button>
                 )} />   

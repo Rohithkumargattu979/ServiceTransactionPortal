@@ -1,11 +1,7 @@
-const express = require('express')
+ 
 const mongoose = require('mongoose')
 
-const SignupTemplate = new mongoose.Schema({
-    fullName:{
-        type:String,
-        required:true
-    },
+const signupTemplate = new mongoose.Schema({
     fullName:{
         type:String,
         required:true
@@ -36,4 +32,4 @@ const SignupTemplate = new mongoose.Schema({
     }
 })
 
-mongoose.export = mongoose.model('seeker',SignupTemplate)
+module.exports = mongoose.model('seeker',signupTemplate)
