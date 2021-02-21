@@ -1,33 +1,41 @@
 import React from 'react'
-import { Route} from 'react-router-dom'
-import './Login.css';
+import {Link,Route} from 'react-router-dom'
+import './Login.css'
 
 
-
-
-const Loginpage = () => {    
-
+const Login = () => {
     return (
-        <div>
-            < h1 style={{color:'gray'}}> Login page</h1 >
+        <div className='container-login'>
+               
             
-            <div className='button'>
-                <Route render={({ history }) => (
-                    <button className='btn1' onClick={() => { history.push('/regpageseeker') }}>
-                        seeker
-                    </button>
+            <h1 className='text'>
+                Email 
+            </h1>
+            <input type='email' className="box" placeholder='email'></input>
+
+            <h1 className='text'>
+                password 
+            </h1>
+            <input type='password' className="box" placeholder='password'></input>
+            <p className='text-account'>
+                Dont have a account? <Link to ='/regpageseeker' >click here </Link>  
+                               
+                
+            </p>
+            <Route render = {({history}) => (
+                
+                    <button className='signin' onClick={() => {history.push("/")}}>sign-in</button>                       
+                    
                 )} />
-                <Route render={({ history }) => (
-                    <button className='btn2' onClick={() => { history.push('/regpagegiver') }}>
-                        giver
-                    </button>
-                )} />
-            </div>
             
+            
+        
+            
+
+    
+        
         </div>
-
-)
-
+    )
 }
 
-export default Loginpage
+export default Login
