@@ -1,13 +1,13 @@
-POST http://localhost:4000/app/signup
+POST   http://localhost:4000/app/login
 Content-Type: application/json
 
-{
-    "fullName":"vamshi",
-    "email":"v@g.com",
-    "phoneNo":"7789987898",
-    "gender":"male",
-    "occupation":"student",
-    "password":"vamshipass",
-    "experience":"none"
+# {
+#     "fullName":"12312nikhil123",
+#     "email":"v@g.com",
+#     "phoneNo":"7789987898",
+#     "gender":"male",
+#     "occupation":"student",
+#     "password":"vamshipass",
+#     "experience":"none"
 
-}
+# }
