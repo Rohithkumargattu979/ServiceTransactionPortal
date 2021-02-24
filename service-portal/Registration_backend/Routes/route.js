@@ -29,7 +29,8 @@ router.post('/login',async (req,res) => {
     }
     if(await bcrypt.compare(loginpassword,user.password)){
         console.log('yesssss');
-        flagroute = true;  
+        
+        /// this this is remaining!!!!!
         
     }else{
         console.log('no');
