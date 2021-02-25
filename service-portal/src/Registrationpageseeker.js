@@ -3,7 +3,7 @@ import "./Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
 import axios from 'axios'
 
-var fullName;
+
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -40,6 +40,7 @@ class RegPage extends Component {
         this.changePhoneNo = this.changePhoneNo.bind(this)
         this.changeExperience = this.changeExperience.bind(this)
         this.onSubmit=this.onSubmit.bind(this)
+        this.showData=this.showData.bind(this)
     }
 
     
@@ -109,6 +110,15 @@ class RegPage extends Component {
                 experience:''
             })
         }}
+
+        showData(event){
+
+            console.log('helloooo');
+            //axios.get('http:localhost:4000/app/signup')
+            //.then(Response => console.log(Response.data))
+            
+              
+        }
     
 
     render(){
@@ -150,7 +160,7 @@ class RegPage extends Component {
                 <br />
 
 
-                <label for="occupation" className='grey-text'>occupation :</label>
+                <label htmlFor="occupation" className='grey-text'>occupation :</label>
                 <select name="occupation" id="occupation" className="dropdown" onChange={this.changeOccupation} value={this.state.occupation}>
                     <option value="carpenter">carpenter</option>
                     <option value="tutor">tutor</option>
@@ -183,10 +193,12 @@ class RegPage extends Component {
                 <textarea type="text" id="experience" className="form-control" rows="2" placeholder='brief bio' onChange={this.changeExperience} value={this.state.experience} />
                 <br />
                 <Route render={({ history }) => (
-                    <button value = 'Submit' className='signup' value='Submit' onClick={this.onSubmit}>
+                    <button value = 'Submit' className='signup'  onClick={this.onSubmit}>
                         sign-up
                     </button>
-                )} />   
+                )} />
+                <br />
+                <button onClick={this.showData}>show data</button>   
             </form>
         
     </header>

@@ -86,7 +86,8 @@ const RegPage = () => {
                     <button className='signup' onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
                         sign-up
                     </button>
-                )} />   
+                )} /> 
+                 
             </form>
         
     </header>
