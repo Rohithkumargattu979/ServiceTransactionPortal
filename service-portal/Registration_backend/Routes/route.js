@@ -10,10 +10,10 @@ const bcrypt = require('bcrypt')
 
 router.post('/login',async (req,res) => {
    
-    let loginname = req.body.loginName
-    let  loginpassword=req.body.loginPassword
+    let loginname = req.body.loginName.toString()
+    let  loginpassword=req.body.loginPassword.toString()
     const user = await signupTemplatecopy.findOne({
-        'fullName':loginname.toString()
+        'fullName':loginname
     }).lean()
 
     if(!user){
