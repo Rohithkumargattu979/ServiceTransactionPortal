@@ -1,0 +1,33 @@
+.container-login{
+    width: 20%;
+    background-color: rgba(5, 4, 4, 0.411);
+    border: 0;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.text{
+    color: black;
+    font-size: calc(20px + 2vmin);
+}
+
+.text-account{
+    color: black;
+    font-size: 15px;
+}
+
+.box{
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.signin{
+    border: 0;
+    border-radius: 10px;
+    font-size: 30px;
+    background: rgb(62, 62, 190);
+}
+.signin:hover{
+    background-color: rgb(6, 10, 226);
+}
