@@ -19,7 +19,7 @@ function check_pass() {
 }
 
 
-class RegPage extends Component {
+class Registrationpageseeker extends Component {
     constructor(){
         super()
         this.state={
@@ -191,7 +191,7 @@ class RegPage extends Component {
     </header>
                 
     );
-};
+}
 }
 
-export default RegPage;
+export default Registrationpageseeker;

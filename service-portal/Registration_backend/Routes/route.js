@@ -12,7 +12,7 @@ router.post('/login',async (req,res) => {
    
     let loginname = req.body.loginName.toString()
     let  loginpassword=req.body.loginPassword.toString()
-    const user = await signupTemplatecopy.findOne({
+    const user =  signupTemplatecopy.findOne({
         'fullName':loginname
     }).lean()
 

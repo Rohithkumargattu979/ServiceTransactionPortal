@@ -9,7 +9,7 @@ let corsOptions = {
   origin: 'http://localhost:4000/' 
 };
 
-let app = express();
+
 app.disable("x-powered-by");
 
 dotenv.config()
