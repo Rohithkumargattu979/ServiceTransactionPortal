@@ -5,22 +5,15 @@ const signupTemplatecopy = require('../models/Signup_model')
 
 
 const bcrypt = require('bcrypt')
-const { Redirect, Route } = require('react-router')
+
 
 
 router.post('/login',async (req,res) => {
-    //const { loginname , loginpassword } = req.body
-    loginname = req.body.loginName
-    loginpassword=req.body.loginPassword
-    
-    // signupTemplatecopy.find({
-    //     'fullName':name
-    // },{
-    //     'email':1,'_id':0
-    // })
-    console.log(loginpassword + 'kkkkkkkkk');
+   
+    let loginname = req.body.loginName
+    let  loginpassword=req.body.loginPassword
     const user = await signupTemplatecopy.findOne({
-        'fullName':loginname
+        'fullName':loginname.toString()
     }).lean()
 
     if(!user){
@@ -28,9 +21,9 @@ router.post('/login',async (req,res) => {
         return false; 
     }
     if(await bcrypt.compare(loginpassword,user.password)){
-        console.log('yesssss');
+        console.log('yes');
         
-        /// this this is remaining!!!!!
+       
         
     }else{
         console.log('no');
@@ -38,21 +31,6 @@ router.post('/login',async (req,res) => {
     }
     
 })
-// router.get('/login',(req,res) => {
-//     var email = 'a@gmail.com'
-//     signupTemplatecopy.find({
-//         'fullName':email
-//     },{
-//         'experience':1,'_id':0
-//     })
-//     .then(data => {
-//         res.json(data)
-//     })
-//     .catch(error => {
-//         res.json(error)
-//     })
-
-// })
 
 router.post('/signup',async (request,response) => {
 

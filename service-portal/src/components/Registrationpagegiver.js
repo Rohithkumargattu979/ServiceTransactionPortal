@@ -18,15 +18,8 @@ function check_pass() {
     
 }
 
-function submit_sucess() {
-    if (document.getElementById('message').innerHTML == 'matching') {
-        window.location.assign('/login');
-    } else {
-        window.location.assign('/regpagegiver');
-    }
-}
 
-const RegPage = () => {
+const Registrationpagegiver = () => {
     return (
     <header className='background'>
         
@@ -92,6 +85,6 @@ const RegPage = () => {
     </header>
                 
     );
-};
+}
 
-export default RegPage;
+export default Registrationpagegiver ;

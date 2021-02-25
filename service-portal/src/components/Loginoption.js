@@ -5,7 +5,7 @@ import './stylesheets/Loginoption.css';
 
 
 
-const Loginpage = () => {    
+const Loginoption = () => {    
 
     return (
         <div>
@@ -30,4 +30,4 @@ const Loginpage = () => {
 
 }
 
-export default Loginpage
+export default Loginoption
