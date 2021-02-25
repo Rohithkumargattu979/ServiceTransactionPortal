@@ -16,13 +16,13 @@
      
     font-size: 150%;
     margin: 5px;    
-    color: rgb(19, 17, 17);
+    color: rgb(186, 194, 201); ;
 }
 
 
 .form-control{
-    margin : 5px;
     
+    margin-left: 5px;
     border: 0;
     padding: 5px;
     border-radius: 5px;    
@@ -51,4 +51,8 @@
 }
 .signup:hover{
     background: rgba(0, 66, 128, 0.178);
+}
+
+.division{
+    flex-wrap: wrap;
 }

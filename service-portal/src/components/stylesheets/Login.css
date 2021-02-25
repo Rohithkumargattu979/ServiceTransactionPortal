@@ -7,12 +7,12 @@
 }
 
 .text{
-    color: black;
+    color: rgb(186, 194, 201); 
     font-size: calc(20px + 2vmin);
 }
 
 .text-account{
-    color: black;
+    color: rgb(186, 194, 201); ;
     font-size: 15px;
 }
 
@@ -23,11 +23,11 @@
 }
 
 .signin{
-    border: 0;
-    border-radius: 10px;
+    border: 10px;
+    border-radius: 5px;
     font-size: 30px;
-    background: rgb(62, 62, 190);
+    background:  rgb(186, 194, 201); 
 }
 .signin:hover{
-    background-color: rgb(6, 10, 226);
+    background-color: rgb(23, 73, 82);
 }
