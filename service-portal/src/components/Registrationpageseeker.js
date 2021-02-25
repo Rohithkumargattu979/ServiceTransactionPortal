@@ -3,7 +3,6 @@ import "./stylesheets/Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
 import axios from 'axios'
 
-var fullName;
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -24,13 +23,13 @@ class RegPage extends Component {
     constructor(){
         super()
         this.state={
-            fullName:'a',
-            email:'a@b.c',
-            phoneNo:'7789989878',
-            gender:'a',
-            occupation:'a',
-            password:'a',
-            experience:'a'
+            fullName:'',
+            email:'',
+            phoneNo:'',
+            gender:'',
+            occupation:'',
+            password:'',
+            experience:''
         }
         this.changeFullName = this.changeFullName.bind(this)
         this.changeEmail = this.changeEmail.bind(this)

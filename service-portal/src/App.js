@@ -3,15 +3,14 @@ import './App.css';
 import RegPageseeker from './components/Registrationpageseeker.js'
 import RegPagegiver from './components/Registrationpagegiver.js'
 import Loginpageopt from './components/Loginoption'
-import Error from './components/Errorpage'
+import Error from './components/Error'
 import Login from './components/Login.js'
 
 
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    
 } from "react-router-dom"
 
 function App() {
