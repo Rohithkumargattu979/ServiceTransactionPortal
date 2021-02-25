@@ -113,8 +113,7 @@ class Registrationpageseeker extends Component {
     render(){
     return (
     <header className='background'>
-        
-            <form className='container' >
+          <div className='division'><form className='container' >
                 <p className="grey-text">Registration</p>
                 <label htmlFor="defaultFormContactNameEx" className="grey-text" >
                     Your name :
@@ -129,13 +128,13 @@ class Registrationpageseeker extends Component {
 
 
                 <label htmlFor="phone no" className='grey-text'> 
-                    phone no :
+                    Phone no :
                 </label>                        
                 <input type="tel" id = 'phoneNo' pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' onChange={this.changePhoneNo} value={this.state.phoneNo}/>
                 <br />
 
-                <label htmlFor="gender" className='grey-text'>
-                    gender :
+                <label htmlFor="gender" className='gender'>
+                    Gender :
                 </label>
                 &nbsp;&nbsp;
                 <select name="gender" id="gender" className="dropdown" placeholder='gender' onChange={this.changeGender} value={this.state.gender}>
@@ -149,7 +148,7 @@ class Registrationpageseeker extends Component {
                 <br />
 
 
-                <label for="occupation" className='grey-text'>occupation :</label>
+                <label for="occupation" className='grey-text'>Occupation :</label>
                 <select name="occupation" id="occupation" className="dropdown" onChange={this.changeOccupation} value={this.state.occupation}>
                     <option value="carpenter">carpenter</option>
                     <option value="tutor">tutor</option>
@@ -160,13 +159,14 @@ class Registrationpageseeker extends Component {
                
 
                 <label htmlFor="defaultExperience" className="grey-text">
-                    password :
+                    Password :
                         
                 </label>
                 <input type="password" name="password" id="password" className="form-control" placeholder='password' onChange={this.changePassword} value={this.state.password}/>
                 <br />
                 <label htmlFor="defaultExperience" className="grey-text">
-                    conform pass :
+                    Confirm 
+                    Password :
                         
                 </label>
                 <input type="password" name="confirm_password" id="confirm_password" onChange={check_pass} className="form-control" placeholder='same as password'/>
@@ -186,7 +186,8 @@ class Registrationpageseeker extends Component {
                         sign-up
                     </button>
                 )} />   
-            </form>
+            </form></div>
+            
         
     </header>
                 
