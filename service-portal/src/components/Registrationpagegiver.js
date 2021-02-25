@@ -1,7 +1,7 @@
 import React from "react";
-import "./Registrationpageseeker.css"
+import "./stylesheets/Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
-import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
+
 
 
 function check_pass() {
@@ -86,8 +86,7 @@ const RegPage = () => {
                     <button className='signup' onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
                         sign-up
                     </button>
-                )} /> 
-                 
+                )} />   
             </form>
         
     </header>
