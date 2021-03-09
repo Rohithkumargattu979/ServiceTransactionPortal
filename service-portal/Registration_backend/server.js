@@ -3,14 +3,20 @@ const app = express()
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const routeURL = require('./Routes/route')
-const cors = require('cors')
+const cors = require('cors');
 
+let corsOptions = {
+  origin: 'http://localhost:4000/' 
+};
+
+
+app.disable("x-powered-by");
 
 dotenv.config()
 
 mongoose.connect(process.env.ACCESS, () => console.log('database connected') )
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions));
 app.use('/app',routeURL)
 app.listen(4000,() => console.log('server is open'))

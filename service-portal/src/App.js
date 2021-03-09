@@ -1,17 +1,16 @@
 import './App.css';
 
-import RegPageseeker from './Registrationpageseeker.js'
-import RegPagegiver from './Registrationpagegiver.js'
-import Loginpageopt from './Loginoption'
-import Error from './Errorpage'
-import Login from './Login.js'
+import RegPageseeker from './components/Registrationpageseeker.js'
+import RegPagegiver from './components/Registrationpagegiver.js'
+import Loginpageopt from './components/Loginoption'
+import Error from './components/Error'
+import Login from './components/Login.js'
 
 
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    
 } from "react-router-dom"
 
 function App() {
