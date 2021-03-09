@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import {Link,Route} from 'react-router-dom'
+import {Link,Redirect,Route} from 'react-router-dom'
 import './Login.css'
 
 
@@ -17,7 +17,12 @@ class Login extends Component {
         console.log(log);
         axios.post('http://localhost:4000/app/login',log)
         .then(Response => console.log(Response.data))
-        
+
+        var flag = localStorage.getItem("ok")
+        console.log(flag);
+        if(flag == 1){
+            window.location.href = '/'
+        }
         
     
     }
@@ -45,7 +50,7 @@ class Login extends Component {
             </p>
             <Route render = {({history}) => (
                 
-                    <button className='signin' onClick={this.sign} onClick={() => {history.push("/")}} >sign-in</button>                       
+                    <button className='signin'  onClick={this.sign} >sign-in</button>                       
                     
                 )} />
                 <button onClick={this.sign}>data</button> 

@@ -29,7 +29,8 @@ router.post('/login',async (req,res) => {
     }
     if(await bcrypt.compare(loginpassword,user.password)){
         console.log('yesssss');
-        
+        var a = 1;
+        localStorage.setItem("ok",a)
         /// this this is remaining!!!!!
         
     }else{

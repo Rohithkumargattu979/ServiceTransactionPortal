@@ -140,13 +140,13 @@ class RegPage extends Component {
 
 
                 <label htmlFor="phone no" className='grey-text'> 
-                    phone no :
+                    Phone no :
                 </label>                        
                 <input type="tel" id = 'phoneNo' pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' onChange={this.changePhoneNo} value={this.state.phoneNo}/>
                 <br />
 
                 <label htmlFor="gender" className='grey-text'>
-                    gender :
+                    Gender :
                 </label>
                 &nbsp;&nbsp;
                 <select name="gender" id="gender" className="dropdown" placeholder='gender' onChange={this.changeGender} value={this.state.gender}>
@@ -160,7 +160,7 @@ class RegPage extends Component {
                 <br />
 
 
-                <label htmlFor="occupation" className='grey-text'>occupation :</label>
+                <label htmlFor="occupation" className='grey-text'>Occupation :</label>
                 <select name="occupation" id="occupation" className="dropdown" onChange={this.changeOccupation} value={this.state.occupation}>
                     <option value="carpenter">carpenter</option>
                     <option value="tutor">tutor</option>
@@ -171,13 +171,13 @@ class RegPage extends Component {
                
 
                 <label htmlFor="defaultExperience" className="grey-text">
-                    password :
+                    Password :
                         
                 </label>
                 <input type="password" name="password" id="password" className="form-control" placeholder='password' onChange={this.changePassword} value={this.state.password}/>
                 <br />
                 <label htmlFor="defaultExperience" className="grey-text">
-                    conform pass :
+                    confirm pass :
                         
                 </label>
                 <input type="password" name="confirm_password" id="confirm_password" onChange={check_pass} className="form-control" placeholder='same as password'/>
@@ -194,11 +194,11 @@ class RegPage extends Component {
                 <br />
                 <Route render={({ history }) => (
                     <button value = 'Submit' className='signup'  onClick={this.onSubmit}>
-                        sign-up
+                        signup
                     </button>
                 )} />
                 <br />
-                <button onClick={this.showData}>show data</button>   
+                
             </form>
         
     </header>

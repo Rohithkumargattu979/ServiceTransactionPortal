@@ -45,13 +45,13 @@ const RegPage = () => {
 
 
                 <label htmlFor="phone no" className='grey-text'> 
-                    phone no :
+                    Phone no :
                 </label>                        
                 <input type="tel"  pattern="[0-9]{10}" className="form-control" placeholder='10-digit number' />
                 <br />
 
                 <label htmlFor="gender" className='grey-text'>
-                    gender :
+                    Gender :
                 </label>
                 &nbsp;&nbsp;
                 <select name="gender" id="gender" className="dropdown" placeholder='gender'>
@@ -67,13 +67,13 @@ const RegPage = () => {
                
 
                 <label htmlFor="defaultExperience" className="grey-text">
-                    password :
+                    Password :
                         
                 </label>
                 <input type="password" name="password" id="password" onChange={check_pass} className="form-control" placeholder='password'/>
                 <br />
                 <label htmlFor="defaultExperience" className="grey-text">
-                    conform pass :
+                    Confirm pass :
                         
                 </label>
                 <input type="password" name="confirm_password" id="confirm_password" onChange={check_pass} className="form-control" placeholder='same as password'/>
@@ -84,7 +84,7 @@ const RegPage = () => {
 
                 <Route render={({ history }) => (
                     <button className='signup' onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
-                        sign-up
+                        signup
                     </button>
                 )} /> 
                  
