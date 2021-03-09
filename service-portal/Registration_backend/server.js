@@ -11,7 +11,7 @@ let corsOptions = {
 
 
 app.disable("x-powered-by");
-
+//config
 dotenv.config()
 
 mongoose.connect(process.env.ACCESS, () => console.log('database connected') )
