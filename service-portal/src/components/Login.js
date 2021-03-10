@@ -9,13 +9,15 @@ class Login extends Component {
 
 
     sign(){
-        const log = {
-            loginEmail:document.getElementById('email').value,
-            loginPassword:document.getElementById('password').value
-        }
+        
          
         
-        axios.post('http://localhost:4000/app/registeredProfessional',log)
+        axios.get('http://localhost:4000/app/signupProfessional',{
+            params :{
+                loginEmail:document.getElementById('email').value,
+                loginPassword:document.getElementById('password').value
+            }
+        })
         .then(Response => console.log(Response.data))
         
         

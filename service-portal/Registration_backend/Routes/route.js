@@ -3,44 +3,75 @@ const express = require('express')
 const router = express.Router()
 const signupTemplatecopy = require('../models/Signup_model')
 const signupTemplatecopy2 = require('../models/Signup_model_customer')
-
+const alert = require('alert')
 
 const bcrypt = require('bcrypt')
+const { response } = require('express')
 
 
 
-router.post('/registeredProfessional',async (req,res) => {
-   
-    let loginemail = req.body.loginEmail.toString()
-    let  loginpassword=req.body.loginPassword.toString()
-    const user =  signupTemplatecopy.findOne({
-        'email':loginemail
-    }).lean()
-
-    if(!user){
-        console.log('no user');
-        return false; 
-    }
-    else if(await bcrypt.compare(loginpassword,user.password)){
-        console.log('yes');     
-       
-        
-    }else{
-        console.log('no');         
-    }
+router.get('/signupProfessional',async (req,res) => {
     
-})
-router.get('/signupCustomer',async (req,res) => {
-   
-    let loginemail = req.body.loginEmail.toString()
-    let  loginpassword=req.body.loginPassword.toString()
-    signupTemplatecopy2.find({}
+    let loginemail = req.query.loginEmail.toString()
+    let  loginpassword=req.query.loginPassword.toString()
+    signupTemplatecopy.findOne({
+        'email': loginemail
+    }
     ).exec((err,user) =>{
         if (err) {
             console.log('error getting users');
         }else{
-            console.log('yesss');
-            res.json(user);
+            if (!user) {
+                console.log("user dosent exist!!");
+            }else(bcrypt.compare(loginpassword,user.password,(error,response) => {
+                if (error) {
+                    console.log(error);
+                    
+                }else{
+                    if (response) {
+                        console.log('login successfull');
+                    }else{
+                        console.log("wrong password!!");
+                        
+                    }
+                
+            }})) 
+            
+            
+            
+        }
+    })
+
+    
+    
+})
+router.get('/signupCustomer',async (req,res) => {
+    console.log(req.query.loginEmail);
+    let loginemail = req.query.loginEmail.toString()
+    let  loginpassword=req.query.loginPassword.toString()
+    signupTemplatecopy2.findOne({
+        'email': loginemail
+    }
+    ).exec((err,user) =>{
+        if (err) {
+            console.log('error getting users');
+        }else{
+            if (!user) {
+                console.log("user dosent exist!!");
+            }else(bcrypt.compare(loginpassword,user.password,(error,response) => {
+                if (error) {
+                    console.log(error);
+                    
+                }else{
+                    if (response) {
+                        console.log('login successfull');
+                    }else{
+                        console.log('wrong password!!');
+                    }
+                
+            }})) 
+            
+            
             
         }
     })
