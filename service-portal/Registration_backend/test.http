@@ -1,13 +1,13 @@
-POST   http://localhost:4000/app/login
+GET    http://localhost:4000/app/signupCustomer
 Content-Type: application/json
 
-# {
-#     "fullName":"12312nikhil123",
-#     "email":"v@g.com",
-#     "phoneNo":"7789987898",
-#     "gender":"male",
-#     "occupation":"student",
-#     "password":"vamshipass",
-#     "experience":"none"
+{
+    "fullName":"Professional",
+    "email":"p@g.com",
+    "phoneNo":"7789987898",
+    "gender":"male",
+    "occupation":"student",
+    "password":"123",
+    "experience":"4 years"
 
-# }
+}
