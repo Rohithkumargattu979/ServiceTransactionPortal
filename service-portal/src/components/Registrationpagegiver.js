@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import "./stylesheets/Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
-
-
+import axios from 'axios'
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -18,8 +17,98 @@ function check_pass() {
     
 }
 
+class Registrationpagegiver extends Component {
+    constructor(){
+        super()
+        this.state={
+            fullName:'',
+            email:'',
+            phoneNo:'',
+            gender:'',
+            occupation:'',
+            password:'',
+            experience:''
+        }
+        this.changeFullName = this.changeFullName.bind(this)
+        this.changeEmail = this.changeEmail.bind(this)
+        this.changeGender = this.changeGender.bind(this)
+        this.changeOccupation = this.changeOccupation.bind(this)
+        this.changePassword = this.changePassword.bind(this)
+        this.changePhoneNo = this.changePhoneNo.bind(this)
+        this.changeExperience = this.changeExperience.bind(this)
+        this.onSubmit=this.onSubmit.bind(this)
+    }
 
-const Registrationpagegiver = () => {
+    
+        changeFullName(props){
+            
+            this.setState({
+                fullName:props.target.value
+            })
+            
+        }
+        changeEmail(Event){
+            this.setState({
+                email:Event.target.value
+            })
+        }
+        changeGender(Event){
+            this.setState({
+                gender:Event.target.value
+            })
+        }
+        changeOccupation(Event){
+            this.setState({
+                occupation:Event.target.value
+            })
+        }
+        changePassword(Event){
+            this.setState({
+                password:Event.target.value
+            })
+        }
+        changePhoneNo(Event){
+            this.setState({
+                phoneNo:Event.target.value
+            })
+        }
+        changeExperience(Event){
+            this.setState({
+                experience:Event.target.value
+            })
+        }
+
+        onSubmit(Event){
+            
+            if (document.getElementById('message').innerHTML == 'matching') {
+            Event.preventDefault()
+
+            const registered = {
+                fullName: document.getElementById('fullName').value,
+                email:document.getElementById('email').value,
+                phoneNo:document.getElementById('phoneNo').value,
+                gender:document.getElementById('gender').value,
+                occupation:document.getElementById('occupation').value,
+                password:document.getElementById('password').value,
+                experience:document.getElementById('experience').value
+            }
+
+            axios.post('http://localhost:4000/app/signupCustomer',registered)
+            .then(Response => console.log(Response.data))
+
+            this.setState({
+                fullName:'',
+                email:'',
+                phoneNo:'',
+                gender:'',
+                occupation:'',
+                password:'',
+                experience:''
+            })
+        }}
+
+
+    render(){
     return (
     <header className='background'>
         
@@ -76,7 +165,7 @@ const Registrationpagegiver = () => {
 
 
                 <Route render={({ history }) => (
-                    <button className='signup' onClick={() => { if (document.getElementById('message').innerHTML == 'matching') { history.push('/') } }}>
+                    <button value = 'Submit' className='signup' value='Submit' onClick={this.onSubmit}>
                         signup
                     </button>
                 )} />   
@@ -85,6 +174,7 @@ const Registrationpagegiver = () => {
     </header>
                 
     );
+}
 }
 
 export default Registrationpagegiver ;

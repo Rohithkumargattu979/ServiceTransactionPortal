@@ -95,7 +95,7 @@ class Registrationpageseeker extends Component {
                 experience:document.getElementById('experience').value
             }
 
-            axios.post('http://localhost:4000/app/signup',registered)
+            axios.post('http://localhost:4000/app/signupProfessional',registered)
             .then(Response => console.log(Response.data))
 
             this.setState({

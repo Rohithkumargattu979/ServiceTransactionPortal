@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import {Link,Route} from 'react-router-dom'
-import './Login.css'
+import './stylesheets/Login.css'
 
 
 
@@ -10,12 +10,12 @@ class Login extends Component {
 
     sign(){
         const log = {
-            loginName:document.getElementById('email').value,
+            loginEmail:document.getElementById('email').value,
             loginPassword:document.getElementById('password').value
         }
          
-        console.log(log);
-        axios.post('http://localhost:4000/app/login',log)
+        
+        axios.get('http://localhost:4000/app/signupCustomer',log)
         .then(Response => console.log(Response.data))
         
         
@@ -39,16 +39,16 @@ class Login extends Component {
             </h1>
             <input id = 'password' type='password' className="box" placeholder='password'></input>
             <p className='text-account'>
-                Dont have a account? <Link to ='/regpageseeker' >click here </Link>  
+                Dont have a account? <Link to ='/regpagegiver' >click here </Link>  
                                
                 
             </p>
             <Route render = {({history}) => (
                 
-                    <button className='signin' onClick={this.sign} onClick={() => {history.push("/")}} >sign-in</button>                       
+                    <button className='signin' onClick={this.sign} >sign-in</button>                       
                     
                 )} />
-                <button onClick={this.sign}>data</button> 
+                
             
             
         
