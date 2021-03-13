@@ -13,4 +13,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.home,
+.profile,
+.history {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
 

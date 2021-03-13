@@ -107,7 +107,10 @@ class Registrationpageseeker extends Component {
                 password:'',
                 experience:''
             })
-        }}
+            
+        }
+        
+    }
     
 
     render(){
