@@ -13,12 +13,12 @@ const Loginoption = () => {
             
             <div className='button'>
                 <Route render={({ history }) => (
-                    <button className='btn1' onClick={() => { history.push('/login') }}>
+                    <button className='btn1' onClick={() => { history.push('/loginProfessional') }}>
                         PROFESSIONAL
                     </button>
                 )} />
                 <Route render={({ history }) => (
-                    <button className='btn2' onClick={() => { history.push('/login') }}>
+                    <button className='btn2' onClick={() => { history.push('/loginCustomer') }}>
                         CUSTOMER
                     </button>
                 )} />

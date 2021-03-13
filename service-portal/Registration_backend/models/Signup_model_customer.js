@@ -18,18 +18,12 @@ const signupTemplate = new mongoose.Schema({
         type:String,
         required:true
     },
-    occupation:{
-        type:String,
-        required:true
-    },
+    
     password:{
         type:String,
         required:true
-    },
-    experience:{
-        type:String,
-        required:true
     }
+    
 })
 
-module.exports = mongoose.model('professionals',signupTemplate)
+module.exports = mongoose.model('customers',signupTemplate)
