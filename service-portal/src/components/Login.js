@@ -46,8 +46,9 @@ class Login extends Component {
                 
             </p>
             <Route render = {({history}) => (
-                
-                    <button className='signin' onClick={this.sign} >sign-in</button>                       
+
+                    <button className='signin' onClick={() => {history.push("/dashboard")}}>sign-in</button>                       
+
                     
                 )} />
                 
