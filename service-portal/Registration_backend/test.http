@@ -1,11 +1,15 @@
 GET    http://localhost:4000/app/signupCustomer
 Content-Type: application/json
 
-{
-    
-    "email":"p@g.com",
-    
-    "password":"123"
-    
 
-}
+ {
+    "fullName":"12312nikhil123",
+    "email":"v@g.com",
+    "phoneNo":"7789987898",
+     "gender":"male",
+     "occupation":"student",
+     "password":"vamshipass",
+     "experience":"none"
+
+ }
+
