@@ -6,6 +6,7 @@ import Loginpageopt from './components/Loginoption'
 import Error from './components/Error'
 import Login_professional from './components/Login.js'
 import Login_customer from './components/Login_customer.js'
+import dashboard from './components/dashboard.js'
 
 
 import {
@@ -24,6 +25,7 @@ function App() {
                   <Route exact path='/loginCustomer' component={Login_customer}/>
                   <Route exact path='/regpageseeker' component={RegPageseeker} /> 
                   <Route exact path='/regpagegiver' component={RegPagegiver} />    
+                  <Route exact path= '/dashboard' component = {dashboard} />
                   <Route component={Error} />
               </Switch>}            
               

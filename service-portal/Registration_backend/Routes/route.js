@@ -3,7 +3,8 @@ const express = require('express')
 const router = express.Router()
 const signupTemplatecopy = require('../models/Signup_model')
 const signupTemplatecopy2 = require('../models/Signup_model_customer')
-const alert = require('alert')
+
+
 
 const bcrypt = require('bcrypt')
 const { response } = require('express')
@@ -23,6 +24,7 @@ router.get('/signupProfessional',async (req,res) => {
         }else{
             if (!user) {
                 console.log("user dosent exist!!");
+                res.send('-2')
             }else(bcrypt.compare(loginpassword,user.password,(error,response) => {
                 if (error) {
                     console.log(error);
@@ -30,8 +32,11 @@ router.get('/signupProfessional',async (req,res) => {
                 }else{
                     if (response) {
                         console.log('login successfull');
+                        res.send(user._id)
                     }else{
+                        res.send('-1')
                         console.log("wrong password!!");
+                        
                         
                     }
                 

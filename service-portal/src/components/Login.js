@@ -1,12 +1,20 @@
+
 import axios from 'axios'
 import React, { Component } from 'react'
 import {Link,Route} from 'react-router-dom'
 import './stylesheets/Login.css'
-
+const Swal = require('sweetalert2')
 
 
 class Login extends Component {
-
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             id : 'empty'
+        }
+    }
+    
 
     sign(){
         
@@ -18,7 +26,30 @@ class Login extends Component {
                 loginPassword:document.getElementById('password').value
             }
         })
-        .then(Response => console.log(Response.data))
+        .then(Response => {
+            if (Response.data == '-1') {
+                Swal.fire({
+                    title: 'wrongPass!',
+                    text: 'Wrong password',
+                    icon: 'error',
+                    confirmButtonText: 'retry'
+                  })
+                
+            }else if (Response.data == '-2') {
+                Swal.fire({
+                    title: 'Error!',
+                    text: "User dosen't exist",
+                    icon: 'error',
+                    confirmButtonText: 'retry'
+                  })
+            }
+            else if(Response.data){
+                window.location.replace('/dashboard')
+            }
+            
+            
+            
+        })
         
         
     
