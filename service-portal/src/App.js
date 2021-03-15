@@ -16,8 +16,7 @@ import Sidebar from './components/Sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  Search  from './components/Search';
 import {About} from './components/About';
-import Test from    './components/Test';
-import Tab from './components/Tab';
+
 
 import { NavigationBarprof } from './components/NavigationBarprof';
 
