@@ -1,9 +1,12 @@
 
 import axios from 'axios'
+//import { response } from 'express'
 import React, { Component } from 'react'
 import {Link,Route} from 'react-router-dom'
 import './stylesheets/Login.css'
 const Swal = require('sweetalert2')
+const cookieParser = require('cookie-parser')
+
 
 
 class Login extends Component {
@@ -25,9 +28,14 @@ class Login extends Component {
                 loginEmail:document.getElementById('email').value,
                 loginPassword:document.getElementById('password').value
             }
-        })
+        },{withCredentials: true})
         .then(Response => {
-            if (Response.data == '-1') {
+            console.log(Response.data);
+            var id = Response.data.id
+            var name = Response.data.name
+            document.cookie="id=" + id + ";" + "max-age=" + (24*60*60) ;
+            document.cookie="name=" + name + ";" + "max-age=" + (24*60*60); 
+            if (id == '-1') {
                 Swal.fire({
                     title: 'wrongPass!',
                     text: 'Wrong password',
@@ -35,7 +43,7 @@ class Login extends Component {
                     confirmButtonText: 'retry'
                   })
                 
-            }else if (Response.data == '-2') {
+            }else if (id == '-2') {
                 Swal.fire({
                     title: 'Error!',
                     text: "User dosen't exist",
@@ -43,8 +51,20 @@ class Login extends Component {
                     confirmButtonText: 'retry'
                   })
             }
-            else if(Response.data){
-                window.location.replace('/dashboard')
+            else if(id!= null){
+                
+                Swal.fire({
+                    title: 'success',
+                    text: "success",
+                    icon: 'success',
+                    confirmButtonText: 'ok'
+                  }).then((result) =>{
+                      if (result.isConfirmed) {
+                          window.location.replace('/dashboard')
+                      }
+                  }
+                  )
+                
             }
             
             

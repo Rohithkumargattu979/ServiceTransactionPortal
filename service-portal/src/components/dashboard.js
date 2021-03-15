@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import sidebar from './sidebar'
 
 import './stylesheets/dashboard.css'
 
@@ -15,12 +14,16 @@ export default class dashboard extends Component {
     closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";}
+    Logout(){
+        document.cookie = "name=; max-age=0";
+        document.cookie = "id=; max-age=0";
+    }
     
     render() {
         return (
             <div>        
                 <div className="topnav">
-                    <a className="active" href="#home">Home</a>
+                    <a className="active" href="/" onClick={this.Logout}>Logout</a>
                     <a to="/news">News</a>
                     <a href="#contact">Contact</a>
                     <a href="#about">About</a>
