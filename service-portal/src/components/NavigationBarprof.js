@@ -21,22 +21,22 @@ const Styles = styled.div`
 `;
 
 
-export class NavigationBar extends Component {
+export class NavigationBarprof extends Component {
   render() {
     return (
       <div>
          <Styles>
     <Navbar expand="lg">
-      <Navbar.Brand href="/Home">User DashBoard</Navbar.Brand>
+      <Navbar.Brand href="/ProfHome">User DashBoard</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       {/* <Form className="form-center">
         <FormControl type="text" placeholder="Search" className="" />
       </Form> */}
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Item><Nav.Link href="/Home">Home</Nav.Link></Nav.Item> 
-          <Nav.Item><Nav.Link href="/About">About</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="/Profile">My Profile</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/ProfHome">Home</Nav.Link></Nav.Item> 
+          <Nav.Item><Nav.Link href="/ProfAbout">About</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/ProfProfile">My Profile</Nav.Link></Nav.Item>
           {/* <Nav.Item><Nav.Link href="/history">History</Nav.Link></Nav.Item> */}
           
         </Nav>
@@ -49,5 +49,5 @@ export class NavigationBar extends Component {
   }
 }
 
-export default NavigationBar
+export default NavigationBarprof
  

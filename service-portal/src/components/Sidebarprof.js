@@ -22,20 +22,15 @@ class SideNav extends React.Component {
             activePath: props.location.pathname,
             items: [
                 {
-                  path: '/Home', /* path is used as id to check which NavItem is active basically */
-                  name: 'Home',
+                  path: '/ProfHome', /* path is used as id to check which NavItem is active basically */
+                  name: 'ProfHome',
                   css: 'fa fa-fw fa-home',
                   key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
                 },
+               
                 {
-                    path: '/Search',
-                    name: 'Search',
-                    css: 'fa fa-fw fa-search',
-                    key: 3
-                  },
-                {
-                  path: '/History',
-                  name: 'History',
+                  path: '/ProfHistory',
+                  name: 'ProfHistory',
                   css: 'fa fa-fw fa-clock',
                   key: 2
                 },
@@ -112,7 +107,7 @@ const NavIcon = styled.div`
 
 `;
 
-export default class Sidebar extends React.Component {
+export default class Sidebarprof extends React.Component {
     render() {
         return (
             <RouterSideNav></RouterSideNav>

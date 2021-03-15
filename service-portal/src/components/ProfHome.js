@@ -9,15 +9,11 @@ const GridWrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(25px, auto);
 `;
-export const Home = (props) => (
+export const ProfHome = (props) => (
  
     <div>
-    <h2>CURRENT POSTS OF CUSTOMER fdhfght </h2>
+    <h2>CURRENT POSTS OF PROFESSIONAL</h2>
 
     </div>
-   
-  
- 
-  
   
 )
