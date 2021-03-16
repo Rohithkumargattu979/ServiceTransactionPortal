@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './stylesheets/About.css'
+
 
 
 
 export const ProfAbout = () => (
 
-  <div className="css-about">
+  <div >
  
  <h2 >aboutY professional</h2>
     <p>TRFDHHJD</p>

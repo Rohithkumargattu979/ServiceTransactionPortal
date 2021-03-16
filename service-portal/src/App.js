@@ -1,30 +1,32 @@
 import './App.css';
 import React from 'react';
-import RegPageseeker from './components/Registrationpageseeker.js'
-import RegPagegiver from './components/Registrationpagegiver.js'
-import Loginpageopt from './components/Loginoption'
+import RegPageseeker from './components/registration/Registrationpageseeker.js'
+import RegPagegiver from './components/registration/Registrationpagegiver.js'
+import Loginpageopt from './components/registration/Loginoption'
 import Error from './components/Error'
-import Login from './components/Login.js'
+import Login from './components/registration/Login.js'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavigationBar } from './components/NavigationBar';
-import { Home } from './components/Home';
-import { History } from './components/History';
+import { NavigationBar } from './components/dashboard/NavigationBar';
+import { Home } from './components/dashboard/Home';
+import { History } from './components/dashboard/History';
 
-import { Profile } from './components/Profile';
-import Sidebar from './components/Sidebar';
+import { Profile } from './components/dashboard/Profile';
+import Sidebar from './components/dashboard/Sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  Search  from './components/Search';
-import {About} from './components/About';
+import  Search  from './components/dashboard/Search';
+import {About} from './components/dashboard/About';
 
 
-import { NavigationBarprof } from './components/NavigationBarprof';
+import { NavigationBarprof } from './components/dashboard/NavigationBarprof';
 
-import  Sidebarprof from './components/Sidebarprof';
-import { ProfAbout } from './components/ProfAbout';
-import { ProfHome } from './components/ProfHome';
-import { ProfHistory} from './components/ProfHistory';
-import { ProfProfile } from './components/ProfProfile';
+import  Sidebarprof from './components/dashboard/Sidebarprof';
+import { ProfAbout } from './components/dashboard/ProfAbout';
+import { ProfHome } from './components/dashboard/ProfHome';
+import { ProfHistory} from './components/dashboard/ProfHistory';
+import { ProfProfile } from './components/dashboard/ProfProfile';
+import Login_customer from './components/registration/Login_customer';
+
 
 
 
@@ -33,10 +35,22 @@ function App() {
     <div className="App">
       <header className="App-header">              
               {<Switch>
-                  <Route exact path='/' component={Loginpageopt} />
+                  {/* <Route exact path='/' component={Loginpageopt} />
                   <Route exact path='/login' component={Login}/>
                   <Route exact path='/regpageseeker' component={RegPageseeker} /> 
                   <Route exact path='/regpagegiver' component={RegPagegiver} /> 
+                  <Route exact path='/Login_customer' component={Login_customer} /> 
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />  */}
+
+                  <Route exact path='/' component={Loginpageopt} />
+                  <Route exact path='/loginProfessional' component={Login}/>
+                  <Route exact path='/loginCustomer' component={Login_customer}/>
+                  <Route exact path='/regpageseeker' component={RegPageseeker} /> 
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />   
+
+
+
+
 
                   <Route
                     exact
