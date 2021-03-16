@@ -15,8 +15,7 @@ export default class dashboard extends Component {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";}
     Logout(){
-        document.cookie = "name=; max-age=0";
-        document.cookie = "id=; max-age=0";
+        document.cookie="jwt="+ ";" + "max-age=" + (0);
     }
     
     render() {

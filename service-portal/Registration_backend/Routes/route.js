@@ -6,6 +6,8 @@ const signupTemplatecopy2 = require('../models/Signup_model_customer')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const { response } = require('express')
+const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv')
 
 
 /*router.get('/cookie' , (req,res) => {
@@ -38,9 +40,9 @@ router.get('/signupProfessional',async (req,res) => {
                         var a={
                             id : id,
                             name : name
-                        }                     
-                        res.send(a);
-                        
+                        }        
+                        var token = jwt.sign({id:id,name:name},process.env.PRIVATE_KEY_JWT,{expiresIn:24*60*60})             
+                        res.send(token);                       
                         
                     }else{
                         res.send('-1')

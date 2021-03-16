@@ -1,11 +1,12 @@
-GET    http://localhost:4000/app/cookie
+POST   http://localhost:4000/app/signupCustomer
 Content-Type: application/json
 
 {
-    
-   // "email":"p@g.com",
-    
-    //"password":"123"
+    "fullName":"nivesh",
+    "email":"nivesh@gmail.com",    
+    "password":"123",
+    "gender":"male"
+
     
 
 }

@@ -9,18 +9,10 @@ const cookieParser = require('cookie-parser')
 
 
 
-class Login extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             id : 'empty'
-        }
-    }
+class Login extends Component {   
     
 
-    sign(){
-        
+    sign(){      
          
         
         axios.get('http://localhost:4000/app/signupProfessional',{
@@ -31,11 +23,12 @@ class Login extends Component {
         },{withCredentials: true})
         .then(Response => {
             console.log(Response.data);
-            var id = Response.data.id
+            /* var id = Response.data.id
             var name = Response.data.name
             document.cookie="id=" + id + ";" + "max-age=" + (24*60*60) ;
-            document.cookie="name=" + name + ";" + "max-age=" + (24*60*60); 
-            if (id == '-1') {
+            document.cookie="name=" + name + ";" + "max-age=" + (24*60*60);  */
+            document.cookie="jwt=" + Response.data + ";" + "max-age=" + (24*60*60*1000); 
+            if (Response.data == '-1') {
                 Swal.fire({
                     title: 'wrongPass!',
                     text: 'Wrong password',
@@ -43,7 +36,7 @@ class Login extends Component {
                     confirmButtonText: 'retry'
                   })
                 
-            }else if (id == '-2') {
+            }else if (Response.data == '-2') {
                 Swal.fire({
                     title: 'Error!',
                     text: "User dosen't exist",
@@ -51,7 +44,7 @@ class Login extends Component {
                     confirmButtonText: 'retry'
                   })
             }
-            else if(id!= null){
+            else if(Response.data!= null){
                 
                 Swal.fire({
                     title: 'success',
