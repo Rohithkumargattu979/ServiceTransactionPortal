@@ -3,7 +3,7 @@ import axios from 'axios'
 //import { response } from 'express'
 import React, { Component } from 'react'
 import {Link,Route} from 'react-router-dom'
-import './stylesheets/Login.css'
+import '../stylesheets/Login.css'
 const Swal = require('sweetalert2')
 const cookieParser = require('cookie-parser')
 
@@ -53,7 +53,7 @@ class Login extends Component {
                     confirmButtonText: 'ok'
                   }).then((result) =>{
                       if (result.isConfirmed) {
-                          window.location.replace('/dashboard')
+                          window.location.replace('/profHome')
                       }
                   }
                   )
