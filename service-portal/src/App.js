@@ -5,7 +5,7 @@ import RegPagegiver from './components/Registrationpagegiver.js'
 import Loginpageopt from './components/Loginoption'
 import Error from './components/Error'
 import Login_professional from './components/Login.js'
-import Login_customer from './components/Login_customer.js'
+import Login_customer from './components/registration/Login_customer.js'
 import dashboard from './components/dashboard.js'
 
 
