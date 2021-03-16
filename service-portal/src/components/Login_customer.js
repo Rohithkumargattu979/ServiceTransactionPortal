@@ -12,8 +12,8 @@ class Login extends Component {
         
          
         
-        axios.get('http://localhost:4000/app/signupProfessional',{
-            params :{
+        axios.get('http://localhost:4000/app/signupCustomer',{
+            params: {
                 loginEmail:document.getElementById('email').value,
                 loginPassword:document.getElementById('password').value
             }
@@ -41,14 +41,13 @@ class Login extends Component {
             </h1>
             <input id = 'password' type='password' className="box" placeholder='password'></input>
             <p className='text-account'>
-                Dont have a account? <Link to ='/regpageseeker' >click here </Link>  
+                Dont have a account? <Link to ='/regpagegiver' >click here </Link>  
                                
                 
             </p>
             <Route render = {({history}) => (
-
-                    <button className='signin' onClick={() => {history.push("/dashboard")}}>sign-in</button>                       
-
+                
+                    <button className='signin' onClick={this.sign} >sign-in</button>                       
                     
                 )} />
                 
