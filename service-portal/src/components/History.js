@@ -22,15 +22,11 @@ margin-right: 6em;
 
 export const History = () => (
 
-  <div>
- 
+  
+  <Hemlo>
      <h2>USER HISTORY</h2>
     <p>TRFDHHJD</p>
-
-    </div>
-
-    
- 
+  </Hemlo>
    
 
  

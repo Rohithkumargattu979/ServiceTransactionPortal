@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 const GridWrapper = styled.div`
   display: grid;
-  grid-gap: 200px;
+  grid-gap: 1000px;
   margin-top: 1em;
   margin-left: 6em;
   margin-right: 6em;
@@ -10,14 +10,14 @@ const GridWrapper = styled.div`
   grid-auto-rows: minmax(25px, auto);
 `;
 export const Home = (props) => (
- 
+  <GridWrapper>
     <div>
-    <h2>CURRENT POSTS OF CUSTOMER fdhfght </h2>
+    <h2>CURRENT POSTS</h2>
 
     </div>
    
   
- 
+  </GridWrapper>
   
   
 )
