@@ -1,30 +1,30 @@
 import './App.css';
 import React from 'react';
-import RegPageseeker from './components/Registrationpageseeker.js'
-import RegPagegiver from './components/Registrationpagegiver.js'
-import Loginpageopt from './components/Loginoption'
+import { Route, Switch } from "react-router-dom";
+//registration
+import RegPageseeker from './components/registration/Registrationpageseeker.js'
+import RegPagegiver from './components/registration/Registrationpagegiver.js'
+import Loginpageopt from './components/registration/Loginoption'
 import Error from './components/Error'
-import Login from './components/Login.js'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavigationBar } from './components/NavigationBar';
-import { Home } from './components/Home';
-import { History } from './components/History';
+import Login from './components/registration/Login.js'
 
-import { Profile } from './components/Profile';
-import Sidebar from './components/Sidebar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import  Search  from './components/Search';
-import {About} from './components/About';
+//dashboard
+//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { NavigationBar } from './components/dashboard/NavigationBar';
+import { Home } from './components/dashboard/Home';
+import { History } from './components/dashboard/History';
+import { Profile } from './components/dashboard/Profile';
+import Sidebar from './components/dashboard/Sidebar';
+import  Search  from './components/dashboard/Search';
+import {About} from './components/dashboard/About';
+import { NavigationBarprof } from './components/dashboard/NavigationBarprof';
+import  Sidebarprof from './components/dashboard/Sidebarprof';
+import { ProfAbout } from './components/dashboard/ProfAbout';
+import { ProfHome } from './components/dashboard/ProfHome';
+import { ProfHistory} from './components/dashboard/ProfHistory';
+import { ProfProfile } from './components/dashboard/ProfProfile';
+import Login_customer from './components/registration/Login_customer';
 
-
-import { NavigationBarprof } from './components/NavigationBarprof';
-
-import  Sidebarprof from './components/Sidebarprof';
-import { ProfAbout } from './components/ProfAbout';
-import { ProfHome } from './components/ProfHome';
-import { ProfHistory} from './components/ProfHistory';
-import { ProfProfile } from './components/ProfProfile';
 
 
 
@@ -33,15 +33,15 @@ function App() {
     <div className="App">
       <header className="App-header">              
               {<Switch>
+                  {/**registration paths */}
                   <Route exact path='/' component={Loginpageopt} />
-                  <Route exact path='/login' component={Login}/>
+                  <Route exact path='/loginProfessional' component={Login}/>
+                  <Route exact path='/loginCustomer' component={Login_customer}/>
                   <Route exact path='/regpageseeker' component={RegPageseeker} /> 
                   <Route exact path='/regpagegiver' component={RegPagegiver} /> 
-
-                  <Route
-                    exact
-                    path='/Home'
-                    render={(props) => 
+                  
+                  {/*dashboard paths*/}
+                  <Route exact path='/Home' render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -49,10 +49,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/history'
-                    render={(props) => 
+                  <Route exact path='/history' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -60,10 +57,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/profile'
-                    render={(props) => 
+                  <Route exact path='/profile' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -71,10 +65,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/about'
-                    render={(props) => 
+                  <Route exact path='/about' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -82,10 +73,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/search'
-                    render={(props) => 
+                  <Route exact path='/search' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -93,10 +81,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/ProfHistory'
-                    render={(props) => 
+                  <Route exact path='/ProfHistory' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -108,10 +93,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/ProfHome'
-                    render={(props) => 
+                  <Route exact path='/ProfHome' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -121,10 +103,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/ProfProfile'
-                    render={(props) => 
+                  <Route exact path='/ProfProfile' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -134,10 +113,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/ProfAbout'
-                    render={(props) => 
+                  <Route exact path='/ProfAbout' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -146,15 +122,6 @@ function App() {
                       </div>
                     }
                   />
-
-                     
-                 
-                  
-           
-            
-            
-           
-
             <Route component={Error} />
               </Switch>}            
               
