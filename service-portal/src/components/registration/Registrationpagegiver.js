@@ -3,6 +3,7 @@ import '../stylesheets/Registrationpageseeker.css'
 import { Route } from 'react-router-dom'
 import axios from 'axios'
 const Swal = require('sweetalert2')
+var isEmpty = false;
 
 function check_pass() {
     if (document.getElementById('password').value ==
@@ -84,7 +85,23 @@ class Registrationpagegiver extends Component {
                 password:document.getElementById('password').value,
                 
             }
-
+            if (registered.fullName == ''|| registered.email == ''|| registered.phoneNo == ''|| registered.gender == ''|| registered.password == '') {
+                    isEmpty = true;
+                }
+            if (isEmpty) {
+                Swal.fire({
+                    title: 'error',
+                    text: "Don't leave empty!!",
+                    icon: 'error',
+                    confirmButtonText: 'retry'
+                  }).then((result) =>{
+                      if (result.isConfirmed) {
+                          window.location.replace('/regpageseeker')
+                      }
+                  }
+                  )
+            } else {               
+                
             axios.post('http://localhost:4000/app/signupCustomer',registered)
             .then(Response => {
                 if (Response.data == 'ok') {
@@ -99,20 +116,9 @@ class Registrationpagegiver extends Component {
                           }
                       }
                       )
-                }else{
-                    Swal.fire({
-                        title: 'error',
-                        text: "Don't leave empty!!",
-                        icon: 'error',
-                        confirmButtonText: 'retry'
-                      }).then((result) =>{
-                          if (result.isConfirmed) {
-                              window.location.replace('/regpageseeker')
-                          }
-                      }
-                      )
                 }
             })
+        }
 
             this.setState({
                 fullName:'',

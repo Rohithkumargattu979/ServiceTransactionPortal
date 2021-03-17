@@ -104,9 +104,10 @@ class Registrationpageseeker extends Component {
                 password:document.getElementById('password').value,
                 experience:document.getElementById('experience').value
             }
-            if (fullName == null|| email == null|| phoneNo == null|| gender == null|| occupation == null|| location == null|| password == null|| experience == null) {
-                isEmpty = true;
+            if (registered.fullName == ''|| registered.email == ''|| registered.phoneNo == ''|| registered.gender == ''|| registered.occupation == ''|| registered.location == ''|| registered.password == ''|| registered.experience == '') {
+            isEmpty = true;
             }
+            console.log(isEmpty);
             if (isEmpty) {
                 Swal.fire({
                     title: 'error',
@@ -116,8 +117,8 @@ class Registrationpageseeker extends Component {
                   }).then((result) =>{
                       if (result.isConfirmed) {
                           window.location.replace('/regpageseeker')
-                      })
-            }
+                      }})
+            }else{
             
             axios.post('http://localhost:4000/app/signupProfessional',registered)
             .then(Response => {
@@ -135,6 +136,7 @@ class Registrationpageseeker extends Component {
                       )
                 }
             })
+        }
 
             this.setState({
                 fullName:'',
