@@ -7,6 +7,8 @@ import RegPagegiver from './components/registration/Registrationpagegiver.js'
 import Loginpageopt from './components/registration/Loginoption'
 import Error from './components/Error'
 import Login from './components/registration/Login.js'
+import {ProtectedRouteCustomer,ProtectedRouteProfessional} from './ProtectedRoute/ProtectedRoute'
+
 
 //dashboard
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -38,10 +40,12 @@ function App() {
                   <Route exact path='/loginProfessional' component={Login}/>
                   <Route exact path='/loginCustomer' component={Login_customer}/>
                   <Route exact path='/regpageseeker' component={RegPageseeker} /> 
-                  <Route exact path='/regpagegiver' component={RegPagegiver} /> 
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />
+                  
+                  
                   
                   {/*dashboard paths*/}
-                  <Route exact path='/Home' render={(props) =>
+                  <ProtectedRouteCustomer exact path='/Home' render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -49,7 +53,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/history' render={(props) => 
+                  <ProtectedRouteCustomer exact path='/history' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -57,7 +61,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/profile' render={(props) => 
+                  <ProtectedRouteCustomer exact path='/profile' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -65,7 +69,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/about' render={(props) => 
+                  <ProtectedRouteCustomer exact path='/about' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -73,7 +77,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/search' render={(props) => 
+                  <ProtectedRouteCustomer exact path='/search' render={(props) => 
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -81,7 +85,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/ProfHistory' render={(props) => 
+                  <ProtectedRouteProfessional exact path='/ProfHistory' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -93,7 +97,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/ProfHome' render={(props) => 
+                  <ProtectedRouteProfessional exact path='/ProfHome' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -103,7 +107,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/ProfProfile' render={(props) => 
+                  <ProtectedRouteProfessional exact path='/ProfProfile' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
@@ -113,7 +117,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route exact path='/ProfAbout' render={(props) => 
+                  <ProtectedRouteProfessional exact path='/ProfAbout' render={(props) => 
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
