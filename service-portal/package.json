@@ -8,6 +8,11 @@
     "@testing-library/user-event": "^12.6.3",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+<<<<<<< Updated upstream
+=======
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+>>>>>>> Stashed changes
     "cra-template": "1.1.2",
     "helmet": "^4.4.1",
     "mdbreact": "^5.0.1",
@@ -19,7 +24,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "styled-components": "^5.2.1",
+<<<<<<< Updated upstream
     "web-vitals": "^1.1.0"
+=======
+    "sweetalert2": "^10.15.6",
+    "web-vitals": "^1.1.0",
+    "webpack-node-externals": "^2.5.2"
+>>>>>>> Stashed changes
   },
   "scripts": {
     "start": "react-scripts start",
