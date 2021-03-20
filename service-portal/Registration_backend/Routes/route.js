@@ -124,12 +124,12 @@ router.post('/signupProfessional',async (request,response) => {
     })
     signedupUser.save()
     .then(data => {
-        response.json(data)
-        response.send('ok')
+        return response.status(200).json(data)
+       // response.send('ok')
     })
     .catch(error => {
-        response.send('not-ok')
-        response.json(error)
+        
+        return response.status(404).json(error)
         
     })
 })
@@ -149,12 +149,12 @@ router.post('/signupCustomer',async (request,response) => {
     })
     signedupUser.save()
     .then(data => {
-        response.json(data)
-        response.send('ok')
+        return response.status(200).json(data)
+        //return response.send('ok')
     })
     .catch(error => {
-        response.json(error)
-        response.send('not-ok')
+        return response.status(404).json(error)
+        
     })
 })
 
