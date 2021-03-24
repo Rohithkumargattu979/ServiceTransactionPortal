@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const signupTemplatecopy = require('../models/Signup_model')
 const signupTemplatecopy2 = require('../models/Signup_model_customer')
-const alert = require('alert')
+// const alert = require('alert')
 
 const bcrypt = require('bcrypt')
 const { response } = require('express')
