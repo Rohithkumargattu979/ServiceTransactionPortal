@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 1000px;
