@@ -11,12 +11,12 @@ let corsOptions = {
 
 
 app.disable("x-powered-by");
-
+//config
 dotenv.config()
 
 mongoose.connect(process.env.ACCESS, () => console.log('database connected') )
 
 app.use(express.json())
-app.use(cors(corsOptions));
+app.use(cors());
 app.use('/app',routeURL)
 app.listen(4000,() => console.log('server is open'))
