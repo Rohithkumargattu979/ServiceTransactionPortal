@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import {Link,Route} from 'react-router-dom'
-import '/ServiceTransactionPortal/service-portal/src/components/stylesheets/Login.css';
+import './Login.css';
 
 
 

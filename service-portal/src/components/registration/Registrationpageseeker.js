@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "/ServiceTransactionPortal/service-portal/src/components/stylesheets/Registrationpageseeker.css"
+import "./Registrationpageseeker.css"
 import { Route } from 'react-router-dom'
 import axios from 'axios'
 
