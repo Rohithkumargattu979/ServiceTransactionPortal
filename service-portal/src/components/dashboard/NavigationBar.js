@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Nav, Navbar, Form, FormControl } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -37,6 +37,7 @@ export class NavigationBar extends Component {
           <Nav.Item><Nav.Link href="/Home">Home</Nav.Link></Nav.Item> 
           <Nav.Item><Nav.Link href="/About">About</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href="/Profile">My Profile</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="/Help">Help</Nav.Link></Nav.Item>
           {/* <Nav.Item><Nav.Link href="/history">History</Nav.Link></Nav.Item> */}
           
         </Nav>

@@ -26,6 +26,7 @@ import { ProfHome } from './components/dashboard/ProfHome';
 import { ProfHistory} from './components/dashboard/ProfHistory';
 import { ProfProfile } from './components/dashboard/ProfProfile';
 import Login_customer from './components/registration/Login_customer';
+import Help from './components/dashboard/Help';
 
 
 
@@ -71,6 +72,17 @@ function App() {
                         <NavigationBar/>
                         <Sidebar/>
                         <History></History>
+                      </div>
+                    }
+                  />
+                  <Route
+                    exact
+                    path='/help'
+                    render={(props) => 
+                      <div>
+                        <NavigationBar/>
+                        <Sidebar/>
+                        <Help></Help>
                       </div>
                     }
                   />
