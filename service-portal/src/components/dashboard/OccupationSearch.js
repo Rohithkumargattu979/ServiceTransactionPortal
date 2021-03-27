@@ -49,11 +49,14 @@ function OccupationSearch() {
 }
 
 const CountryDetail = (props) => {
-  const { occupation } = props;
+  const { occupation, fullName, phoneNo } = props;
 
   return (
     <>
+      
+      <p>{fullName}</p>
       <p>{occupation}</p>
+      <p>{phoneNo}</p>
     </>
   );
 };
