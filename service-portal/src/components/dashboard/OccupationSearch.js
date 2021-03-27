@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import Card from "react-bootstrap/Card";
 
 function OccupationSearch() {
   const [countries, setCountries] = useState([]);
@@ -49,11 +50,22 @@ function OccupationSearch() {
 }
 
 const CountryDetail = (props) => {
-  const { occupation } = props;
+  const { occupation, fullName, phoneNo } = props;
 
   return (
     <>
-      <p>{occupation}</p>
+          
+          <div className='ml-5 mt-2'>
+            <Card style={{ width: '14rem' }}>
+              <Card.Body>
+                <Card.Title style={{color: 'black' }}>{fullName}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{occupation}</Card.Subtitle>
+                <Card.Text style={{color: 'black'}}>
+                <small>{phoneNo} </small>
+                </Card.Text>
+              </Card.Body>
+           </Card>
+      </div>
     </>
   );
 };
