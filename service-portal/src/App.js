@@ -16,7 +16,7 @@ import Sidebar from './components/dashboard/Sidebar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  Search  from './components/dashboard/Search';
 import {About} from './components/dashboard/About';
-
+import OccupationSearch from './components/dashboard/OccupationSearch';
 
 import { NavigationBarprof } from './components/dashboard/NavigationBarprof';
 
@@ -34,20 +34,20 @@ import Help from './components/dashboard/Help';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">              
+      <header className="App-header">
               {<Switch>
                   {/* <Route exact path='/' component={Loginpageopt} />
                   <Route exact path='/login' component={Login}/>
-                  <Route exact path='/regpageseeker' component={RegPageseeker} /> 
-                  <Route exact path='/regpagegiver' component={RegPagegiver} /> 
-                  <Route exact path='/Login_customer' component={Login_customer} /> 
+                  <Route exact path='/regpageseeker' component={RegPageseeker} />
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />
+                  <Route exact path='/Login_customer' component={Login_customer} />
                   <Route exact path='/regpagegiver' component={RegPagegiver} />  */}
 
                   <Route exact path='/' component={Loginpageopt} />
                   <Route exact path='/loginProfessional' component={Login}/>
                   <Route exact path='/loginCustomer' component={Login_customer}/>
-                  <Route exact path='/regpageseeker' component={RegPageseeker} /> 
-                  <Route exact path='/regpagegiver' component={RegPagegiver} />   
+                  <Route exact path='/regpageseeker' component={RegPageseeker} />
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />
 
 
 
@@ -56,7 +56,7 @@ function App() {
                   <Route
                     exact
                     path='/Home'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -67,7 +67,7 @@ function App() {
                   <Route
                     exact
                     path='/history'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -78,7 +78,7 @@ function App() {
                   <Route
                     exact
                     path='/help'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -89,7 +89,7 @@ function App() {
                   <Route
                     exact
                     path='/profile'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -100,7 +100,7 @@ function App() {
                   <Route
                     exact
                     path='/about'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -111,7 +111,7 @@ function App() {
                   <Route
                     exact
                     path='/search'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBar/>
                         <Sidebar/>
@@ -121,70 +121,82 @@ function App() {
                   />
                   <Route
                     exact
+                    path='/occupationSearch'
+                    render={(props) =>
+                      <div>
+                        <NavigationBarprof/>
+
+                        <Sidebar/>
+                        <OccupationSearch></OccupationSearch>
+                      </div>
+                    }
+                  />
+                  <Route
+                    exact
                     path='/ProfHistory'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
                         <ProfHistory></ProfHistory>
-                       
-                        
-                        
-                        
+
+
+
+
                       </div>
                     }
                   />
                   <Route
                     exact
                     path='/ProfHome'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
                         <ProfHome/>
-                        
-                        
+
+
                       </div>
                     }
                   />
                   <Route
                     exact
                     path='/ProfProfile'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
                         <ProfProfile/>
-                        
-                       
+
+
                       </div>
                     }
                   />
                   <Route
                     exact
                     path='/ProfAbout'
-                    render={(props) => 
+                    render={(props) =>
                       <div>
                         <NavigationBarprof/>
                         <Sidebarprof/>
-                        
+
                         <ProfAbout/>
                       </div>
                     }
                   />
 
-                     
-                 
-                  
-           
-            
-            
-           
+
+
+
+
+
+
+
 
             <Route component={Error} />
-              </Switch>}            
-              
-      
+              </Switch>}
+
+
       </header>
     </div>
   );
