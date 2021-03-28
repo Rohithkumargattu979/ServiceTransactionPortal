@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import '/ServiceTransactionPortal/service-portal/src/components/stylesheets/Home.css';
+import './Home.css';
 import ListItems from './Listitems';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
