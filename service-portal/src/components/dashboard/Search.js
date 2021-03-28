@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Sidebar from './Sidebar';
+import NavigationBar  from './NavigationBar';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -24,6 +26,8 @@ margin-right: 6em;
   const names=['Bruce','Diana','Clark']
   return(
     <Hemlo>
+      <NavigationBar />
+      <Sidebar />
       <h2>SEARCH PROFESSIONALS</h2>
       <div>
       {

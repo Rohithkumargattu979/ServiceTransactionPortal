@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import '/ServiceTransactionPortal/service-portal/src/components/stylesheets/Home.css';
 import ListItems from './Listitems';
@@ -98,5 +97,6 @@ export class Home extends Component {
 }
 
 export default Home;
+
 
 
