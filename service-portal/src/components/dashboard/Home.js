@@ -3,6 +3,8 @@ import './Home.css';
 import ListItems from './Listitems';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import Sidebar from './Sidebar';
+import NavigationBar  from './NavigationBar';
 library.add(faTrash);
 
 export class Home extends Component {
@@ -73,7 +75,10 @@ export class Home extends Component {
 
   render() {
     return (
+      
       <div className="Home">
+        <NavigationBar />
+        <Sidebar />
         <header>
        <form id='to-do-form' onSubmit={this.addItem}>
          <input type="text" placeholder="Enter Text"
