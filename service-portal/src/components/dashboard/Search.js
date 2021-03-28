@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import OccupationSearch from './OccupationSearch';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Sidebar from './Sidebar';
+import NavigationBar  from './NavigationBar';
 
 const GridWrapper = styled.div`
   display: grid;
@@ -21,10 +23,18 @@ margin-right: 6em;
 
 
  function Search (){
-  // const names=['Bruce','Diana','Clark']
+  const names=['Bruce','Diana','Clark']
   return(
-    
-    <OccupationSearch/>
+    <Hemlo>
+      <NavigationBar />
+      <Sidebar />
+      <h2>SEARCH PROFESSIONALS</h2>
+      <div>
+      {
+      names.map(name=> <h2>{name}</h2> )
+      }
+    </div>
+    </Hemlo>
     
   )
 

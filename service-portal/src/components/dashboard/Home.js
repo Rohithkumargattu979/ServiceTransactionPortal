@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './stylesheets/Home.css';
+import './Home.css';
 import ListItems from './Listitems';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -97,4 +97,6 @@ export class Home extends Component {
 }
 
 export default Home;
+
+
 
