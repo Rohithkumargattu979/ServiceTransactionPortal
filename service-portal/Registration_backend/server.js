@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 const routeURL = require('./Routes/route')
 const cors = require('cors');
 const cookieParser = require('cookie-parser')
-
+const PORT=process.env.PORT || 4000;
 let corsOptions = {
   origin: 'http://localhost:4000/' 
 };
@@ -22,4 +22,4 @@ app.use(cookieParser())
 app.use(cors());
 
 app.use('/app',routeURL)
-app.listen(4000,() => console.log('server is open'))
+app.listen(PORT,console.log(`Server open at  ${PORT}`));
