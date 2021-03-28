@@ -23,12 +23,7 @@ router.get('/all',async (req,res) => {
             return occupations.push(object);
         });
 
-        // allcity.forEach( (element) => {
-        //     var object = {
-        //         "city" : element['city']
-        //     }
-        //     return cities.push(object);
-        // });
+       
 
         
 
