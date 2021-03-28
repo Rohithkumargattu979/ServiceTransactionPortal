@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Container,Row,Col,Form ,Button} from 'react-bootstrap';
 const GridWrapper = styled.div`
   display: grid;
   grid-gap: 10px;
@@ -18,10 +19,32 @@ margin-right: 6em;
 `;
 
 export const Profile = () => (
+  <>
+  <Container>
+        <Row>
+        <Col>
+            <h1>User Profile</h1>
+            <Form className="form">    
+  <Form.Group controlId="formCategory1">
+    <Form.Label>Username</Form.Label>
+    
+  
+  </Form.Group>
+  <Form.Group controlId="formCategory2">
+    <Form.Label>Email</Form.Label>
+    
+  
+  </Form.Group>
+ 
+  <Form.Group controlId="formCategory4">
+    <Form.Label>Profile Image</Form.Label>
+    
+    </Form.Group>
+  
+  </Form>
+   </Col>
 
-  <Hemlo>
-     <h2>USER PROFILE</h2>
-    <p>TRFDHHJDSAFGAG</p>
-  </Hemlo>
-
+       </Row>
+        </Container>
+</>
 )
