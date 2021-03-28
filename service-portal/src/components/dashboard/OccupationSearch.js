@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
+import "./OS.css";
 
 function OccupationSearch() {
   const [countries, setCountries] = useState([]);
@@ -36,10 +37,10 @@ function OccupationSearch() {
 
   return (
     <div className="Search">
-      <h1>Occupations Lists</h1>
+      <h1>List of professionals</h1>
       <input
         type="text"
-        placeholder="Search Occupation"
+        placeholder="Search by Occupation..."
         onChange={(e) => setSearch(e.target.value)}
       />
       {filteredCountries.map((country, idx) => (
@@ -55,7 +56,7 @@ const CountryDetail = (props) => {
   return (
     <>
           
-          <div className='ml-5 mt-2'>
+          <div className='ml-5 mt-3'>
             <Card style={{ width: '14rem' }}>
               <Card.Body>
                 <Card.Title style={{color: 'black' }}>{fullName}</Card.Title>
