@@ -1,32 +1,33 @@
 import './App.css';
 import React from 'react';
+import { Route, Switch } from "react-router-dom";
+//registration
 import RegPageseeker from './components/registration/Registrationpageseeker.js'
 import RegPagegiver from './components/registration/Registrationpagegiver.js'
 import Loginpageopt from './components/registration/Loginoption'
 import Error from './components/Error'
 import Login from './components/registration/Login.js'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavigationBar } from './components/dashboard/NavigationBar';
-import { Home } from './components/dashboard/Home';
-import { History } from './components/dashboard/History';
+import dashboard from './components/dashboard/dummy_dashboard.js'
+import {ProtectedRouteCustomer,ProtectedRouteProfessional} from './ProtectedRoute/ProtectedRoute'
 
+
+//dashboard
+//import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { NavigationBar } from './components/dashboard/NavigationBar';
+import  Home  from './components/dashboard/Home.js';
+import { History } from './components/dashboard/History';
 import { Profile } from './components/dashboard/Profile';
 import Sidebar from './components/dashboard/Sidebar';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import  Search  from './components/dashboard/Search';
 import {About} from './components/dashboard/About';
-import OccupationSearch from './components/dashboard/OccupationSearch';
-
 import { NavigationBarprof } from './components/dashboard/NavigationBarprof';
-
 import  Sidebarprof from './components/dashboard/Sidebarprof';
 import { ProfAbout } from './components/dashboard/ProfAbout';
 import { ProfHome } from './components/dashboard/ProfHome';
 import { ProfHistory} from './components/dashboard/ProfHistory';
 import { ProfProfile } from './components/dashboard/ProfProfile';
 import Login_customer from './components/registration/Login_customer';
-import Help from './components/dashboard/Help';
+
 
 
 
@@ -34,18 +35,13 @@ import Help from './components/dashboard/Help';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header">              
               {<Switch>
-                  {/* <Route exact path='/' component={Loginpageopt} />
-                  <Route exact path='/login' component={Login}/>
-                  <Route exact path='/regpageseeker' component={RegPageseeker} />
-                  <Route exact path='/regpagegiver' component={RegPagegiver} />
-                  <Route exact path='/Login_customer' component={Login_customer} />
-                  <Route exact path='/regpagegiver' component={RegPagegiver} />  */}
-
+                  {/**registration paths */}
                   <Route exact path='/' component={Loginpageopt} />
                   <Route exact path='/loginProfessional' component={Login}/>
                   <Route exact path='/loginCustomer' component={Login_customer}/>
+<<<<<<< HEAD
                   <Route exact path='/regpageseeker' component={RegPageseeker} />
                   <Route exact path='/regpagegiver' component={RegPagegiver} />
 
@@ -182,10 +178,57 @@ function App() {
 
 
 
+=======
+                  <Route exact path='/regpageseeker' component={RegPageseeker} /> 
+                  <Route exact path='/regpagegiver' component={RegPagegiver} />      
+
+
+                  
+                  
+                  
+                  
+                 {/*  {/*dashboard paths*/}
+                  <ProtectedRouteCustomer exact path='/Home' component={Home}  >
+                   
+                  </ProtectedRouteCustomer>
+                 
+                  <ProtectedRouteCustomer exact path='/history' component={History}>
+                    
+                  </ProtectedRouteCustomer>
+                  
+                  <ProtectedRouteCustomer exact path='/profile' component={Profile}>
+                  
+                  </ProtectedRouteCustomer>                  
+                  
+                  <ProtectedRouteCustomer exact path='/about' component={About}>
+                  
+                  </ProtectedRouteCustomer>
+                   
+                  <ProtectedRouteCustomer exact path='/Search' component={Search}>
+                  
+                  </ProtectedRouteCustomer>
+                  
+                  <ProtectedRouteProfessional exact path='/ProfHistory'component={ProfHistory}>
+                  
+                  </ProtectedRouteProfessional>
+                  
+                  <ProtectedRouteProfessional exact path='/ProfHome'  component={ProfHome}>
+                  
+                  </ProtectedRouteProfessional>
+                  
+                  <ProtectedRouteProfessional exact path='/ProfProfile' component={ProfProfile}>
+                  
+                  </ProtectedRouteProfessional>
+                  
+                  <ProtectedRouteProfessional exact path='/ProfAbout' component={ProfAbout}>
+                  
+                  </ProtectedRouteProfessional>
+                   
+>>>>>>> f3d6fec506aaed109bd39b0d3dd60041745fcb1e
             <Route component={Error} />
-              </Switch>}
-
-
+              </Switch>}            
+              
+      
       </header>
     </div>
   );
