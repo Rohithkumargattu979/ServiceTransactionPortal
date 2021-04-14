@@ -119,18 +119,7 @@ function App() {
                       </div>
                     }
                   />
-                  <Route
-                    exact
-                    path='/occupationSearch'
-                    render={(props) =>
-                      <div>
-                        <NavigationBarprof/>
-
-                        <Sidebar/>
-                        <OccupationSearch></OccupationSearch>
-                      </div>
-                    }
-                  />
+                  
                   <Route
                     exact
                     path='/ProfHistory'

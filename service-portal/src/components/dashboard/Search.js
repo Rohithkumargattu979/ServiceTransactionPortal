@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import OccupationSearch from './OccupationSearch';
 
 const GridWrapper = styled.div`
@@ -21,10 +22,10 @@ margin-right: 6em;
 
 
  function Search (){
-  // const names=['Bruce','Diana','Clark']
+  //const names=['Bruce','Diana','Clark']
   return(
     
-    <OccupationSearch/>
+    <OccupationSearch />
     
   )
 
