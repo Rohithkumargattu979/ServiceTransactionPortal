@@ -1,4 +1,4 @@
-
+ 
 const mongoose = require('mongoose')
 
 const signupTemplate = new mongoose.Schema({
@@ -19,6 +19,10 @@ const signupTemplate = new mongoose.Schema({
         required:true
     },
     occupation:{
+        type:String,
+        required:true
+    },
+    location:{
         type:String,
         required:true
     },

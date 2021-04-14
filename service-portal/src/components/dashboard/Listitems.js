@@ -1,5 +1,5 @@
 import React from 'react'
-import './stylesheets/Listitem.css';
+import './Listitem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ListItems(props){
