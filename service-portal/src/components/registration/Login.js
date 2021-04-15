@@ -7,7 +7,7 @@ import {Link,Redirect,Route} from 'react-router-dom'
 import '../stylesheets/Login.css'
 
 const Swal = require('sweetalert2')
-const cookieParser = require('cookie-parser')
+//const cookieParser = require('cookie-parser')
 
 
 
