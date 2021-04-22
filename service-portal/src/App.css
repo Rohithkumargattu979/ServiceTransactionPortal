@@ -4,14 +4,15 @@
 
 
 .App-header {
-  background: url("https://wallpapercave.com/wp/wp2587231.jpg");
+  background-image: url(./images/stpbg2.jpg);
+  background-size: 100% auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   /*align-items: center;*/
   /*justify-content: center;*/
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* font-size: calc(10px + 2vmin); */
+  color: rgb(6, 33, 48);
 }
 .home,
 .profile,

@@ -40,7 +40,7 @@ function OccupationSearch() {
 
   return (
     <div className="Search">
-      <h1>List of professionals</h1>
+      <h1>Professionals</h1>
       <input
         className="search-input-city"
         type="text"
@@ -48,6 +48,7 @@ function OccupationSearch() {
         onChange={(e) => setsearchByLocation(e.target.value)}
       />
       <input
+        className="search-input-occupation"
         type="text"
         placeholder="Search by Occupation..."
         onChange={(e) => setSearchByCity(e.target.value)}
@@ -55,7 +56,7 @@ function OccupationSearch() {
       {filteredprofessionals.map((element, idx)  => (
         <ProfessionalDetail key={idx} {...element} />
       ))}
-     {filteredprofessionals.length===0 ? <h1>NO Results :(</h1> : <h1></h1>}
+     {filteredprofessionals.length===0 ? <h2>NO Results :(</h2> : <h2></h2>}
     </div>
   );
 }
@@ -66,17 +67,18 @@ const ProfessionalDetail = (props) => {
   return (
     <>
           
-          <div className='ml-5 mt-3'>
-            <Card style={{ width: '14rem' }}>
+          <div className='mt-3'>
+            <Card style={{ width: '30rem' }}>
               <Card.Body>
-                <Card.Title style={{color: 'black' }}>{fullName}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">{occupation}</Card.Subtitle>
-                <Card.Text className="mb-2 text-muted" style={{color: 'black'}}>
-                  <small>{location}</small>
-                </Card.Text>
-                <Card.Text style={{color: 'black'}}>
-                <small>{phoneNo} </small>
-                </Card.Text>
+                <Card.Title style={{color: 'black' }}>Name: {fullName}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">Occupation: {occupation}</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted" style={{color: 'black'}}>
+                  City: {location}
+                </Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted" style={{color: 'black'}}>
+                Contact: {phoneNo} 
+                </Card.Subtitle>
+                <Card.Img variant="bottom" className="im" src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/worker.png"/>
               </Card.Body>
            </Card>
       </div>
