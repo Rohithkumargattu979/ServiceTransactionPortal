@@ -42,6 +42,7 @@ function OccupationSearch() {
     <div className="Search">
       <h1>List of professionals</h1>
       <input
+        className="search-input-city"
         type="text"
         placeholder="Search by City..."
         onChange={(e) => setsearchByLocation(e.target.value)}
