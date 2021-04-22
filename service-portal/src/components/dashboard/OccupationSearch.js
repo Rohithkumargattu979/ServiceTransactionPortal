@@ -5,17 +5,18 @@ import Card from "react-bootstrap/Card";
 import "./OS.css";
 
 function OccupationSearch() {
-  const [countries, setCountries] = useState([]);
+  const [professionals, setprofessionals] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [search, setSearch] = useState("");
-  const [filteredCountries, setFilteredCountries] = useState([]);
+  const [searchByCity, setSearchByCity] = useState("");
+  const [searchByLocation, setsearchByLocation] = useState("");
+  const [filteredprofessionals, setFilteredprofessionals] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     axios
       .get("http://localhost:4000/professionals/all")
       .then((res) => {
-        setCountries(res.data);
+        setprofessionals(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -24,12 +25,14 @@ function OccupationSearch() {
   }, []);
 
   useEffect(() => {
-    setFilteredCountries(
-      countries.filter((country) =>
-        country.occupation.includes(search.toLowerCase())
+    setFilteredprofessionals(
+      professionals.filter((element) =>
+        element.occupation.toLowerCase().includes(searchByCity.toLowerCase())
+      ).filter((element) =>
+        element.location.toLowerCase().includes(searchByLocation.toLowerCase())
       )
     );
-  }, [search, countries]);
+  }, [searchByCity,searchByLocation, professionals]);
 
   if (loading) {
     return <p>Loading Occupations...</p>;
@@ -40,17 +43,23 @@ function OccupationSearch() {
       <h1>List of professionals</h1>
       <input
         type="text"
-        placeholder="Search by Occupation..."
-        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search by City..."
+        onChange={(e) => setsearchByLocation(e.target.value)}
       />
-      {filteredCountries.map((country, idx) => (
-        <CountryDetail key={idx} {...country} />
+      <input
+        type="text"
+        placeholder="Search by Occupation..."
+        onChange={(e) => setSearchByCity(e.target.value)}
+      />
+      {filteredprofessionals.map((element, idx)  => (
+        <ProfessionalDetail key={idx} {...element} />
       ))}
+     {filteredprofessionals.length===0 ? <h1>NO Results :(</h1> : <h1></h1>}
     </div>
   );
 }
 
-const CountryDetail = (props) => {
+const ProfessionalDetail = (props) => {
   const { occupation, fullName, phoneNo, location } = props;
 
   return (
@@ -61,7 +70,7 @@ const CountryDetail = (props) => {
               <Card.Body>
                 <Card.Title style={{color: 'black' }}>{fullName}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{occupation}</Card.Subtitle>
-                <Card.Text style={{color: 'black'}}>
+                <Card.Text className="mb-2 text-muted" style={{color: 'black'}}>
                   <small>{location}</small>
                 </Card.Text>
                 <Card.Text style={{color: 'black'}}>
